@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgu6mxp2emtp0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fxpe8"]
+load_path = "res://.godot/imported/Mossy - BackgroundDecoration.png-b4ad056693a0658d30203894f131a166.ctex"
+
+[node name="BG" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 1500)
+
+[node name="Mossy-BackgroundDecoration" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(670, 702)
+scale = Vector2(0.333374, 0.343201)
+texture = SubResource("CompressedTexture2D_fxpe8")
