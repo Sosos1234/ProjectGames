@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://3v5t6m4rm2i6"]
+
+[ext_resource type="Texture2D" uid="uid://cth87why4iiwq" path="res://oak_woods_v1.0/character/char_blue.png" id="1_irtrm"]
+[ext_resource type="Script" path="res://PLAYER/PLAYER.gd" id="1_tr36v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aeq0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e61o"]
+atlas = ExtResource("1_irtrm")
+region = Rect2(0, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vvgn"]
+atlas = ExtResource("1_irtrm")
+region = Rect2(56, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok6k8"]
+atlas = ExtResource("1_irtrm")
+region = Rect2(112, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms67e"]
+atlas = ExtResource("1_irtrm")
+region = Rect2(168, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rck1s"]
+atlas = ExtResource("1_irtrm")
+region = Rect2(224, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17fwv"]
+atlas = ExtResource("1_irtrm")
+region = Rect2(280, 0, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6c87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e61o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vvgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok6k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms67e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rck1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17fwv")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_tr36v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_aeq0d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -8)
+scale = Vector2(0.732143, 0.75)
+sprite_frames = SubResource("SpriteFrames_q6c87")
+animation = &"IDLE"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.4, 2.4)
+position_smoothing_enabled = true
