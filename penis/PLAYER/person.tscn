@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://3v5t6m4rm2i6"]
+[gd_scene load_steps=12 format=3 uid="uid://3v5t6m4rm2i6"]
 
 [ext_resource type="Texture2D" uid="uid://cth87why4iiwq" path="res://oak_woods_v1.0/character/char_blue.png" id="1_irtrm"]
 [ext_resource type="Script" path="res://PLAYER/PLAYER.gd" id="1_tr36v"]
+[ext_resource type="Script" path="res://PLAYER/CameraPlayer.gd" id="3_26y6k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aeq0d"]
 
@@ -55,7 +56,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tr36v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -70,5 +71,6 @@ sprite_frames = SubResource("SpriteFrames_q6c87")
 animation = &"IDLE"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.4, 2.4)
+limit_bottom = 850
 position_smoothing_enabled = true
+script = ExtResource("3_26y6k")

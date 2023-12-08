@@ -6,9 +6,9 @@ load_path = "res://.godot/imported/Mossy - BackgroundDecoration.png-b4ad056693a0
 [node name="BG" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(0, 1500)
+motion_mirroring = Vector2(0, 631)
 
 [node name="Mossy-BackgroundDecoration" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(670, 702)
-scale = Vector2(0.333374, 0.343201)
+position = Vector2(294.125, 315.045)
+scale = Vector2(0.149841, 0.154258)
 texture = SubResource("CompressedTexture2D_fxpe8")
