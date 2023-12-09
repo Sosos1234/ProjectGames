@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
-
-var speed = 100.0
-const JUMP_VELOCITY = -400.0
+var MaxScore: int = 0
+var score: int
+var money: int
+var distance: int
+var speed = 350.0
+const JUMP_VELOCITY = -700.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -24,5 +27,19 @@ func _physics_process(delta):
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-
+	
+	points(self.position.y)
+	
 	move_and_slide()
+
+
+func points(delta):
+	distance = self.position.y - 909
+	score = abs(distance) / 10
+	if MaxScore < score:
+		MaxScore = score
+	gold(score)
+
+
+func gold(delta):
+	money = MaxScore / 10
