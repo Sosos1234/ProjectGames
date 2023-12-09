@@ -33,13 +33,13 @@ func _process(delta):
 script = ExtResource("1_55joy")
 
 [node name="Player" parent="." instance=ExtResource("2_ql3l8")]
-position = Vector2(219, 889)
+position = Vector2(233, 893)
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(271, 973)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-5, 0)
+[node name="WallOfDeath" type="CollisionShape2D" parent="Area2D"]
+unique_name_in_owner = true
+position = Vector2(266, 974)
 shape = SubResource("RectangleShape2D_ndvjs")
 
 [node name="BG" parent="." instance=ExtResource("4_dmsj0")]
@@ -85,24 +85,6 @@ script = SubResource("GDScript_03uwr")
 
 [node name="Platform" parent="." instance=ExtResource("5_qyija")]
 position = Vector2(16, 950)
-
-[node name="Platform8" parent="." instance=ExtResource("5_qyija")]
-position = Vector2(126, 861)
-
-[node name="Platform9" parent="." instance=ExtResource("5_qyija")]
-position = Vector2(350, 753)
-
-[node name="Platform10" parent="." instance=ExtResource("5_qyija")]
-position = Vector2(499, 643)
-
-[node name="Platform11" parent="." instance=ExtResource("5_qyija")]
-position = Vector2(40, 512)
-
-[node name="Platform12" parent="." instance=ExtResource("5_qyija")]
-position = Vector2(122, 512)
-
-[node name="Platform13" parent="." instance=ExtResource("5_qyija")]
-position = Vector2(235, 418)
 
 [node name="Platform2" parent="." instance=ExtResource("5_qyija")]
 position = Vector2(98, 950)

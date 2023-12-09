@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgu6mxp2emtp0"]
+
+[ext_resource type="Texture2D" uid="uid://cn431cva5kecc" path="res://Sprites/Спрайт-0005 (3).PNG" id="1_nbyjq"]
+
+[node name="BG" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 960)
+
+[node name="Mossy-BackgroundDecoration" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(270, 479.5)
+scale = Vector2(0.5, 0.500521)
+texture = ExtResource("1_nbyjq")

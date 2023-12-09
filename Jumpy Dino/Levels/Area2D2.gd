@@ -6,6 +6,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var PlaPos = $"../Player".position.y - 150
-	$Area2D2/transitionWall1.position.y = PlaPos
-	$Area2D2/transitionWall1.position.y = PlaPos
+	var PlayerPos = $"../Player".position.y - 150
+	$Area2D/transitionWall2.position.y = PlayerPos
+	$Area2D2/transitionWall1.position.y = PlayerPos
