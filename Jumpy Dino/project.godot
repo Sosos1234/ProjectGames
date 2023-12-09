@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Penis"
+config/name="Jumpy Dino"
 run/main_scene="res://Levels/level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
