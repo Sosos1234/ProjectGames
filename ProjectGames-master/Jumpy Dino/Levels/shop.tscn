@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7ibndq0r3dho"]
+
+[ext_resource type="Script" path="res://Levels/shop.gd" id="1_jqxma"]
+[ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="2_edwh2"]
+
+[node name="shop" type="Node2D"]
+script = ExtResource("1_jqxma")
+
+[node name="Platform" parent="." instance=ExtResource("2_edwh2")]
+position = Vector2(-696, 379.27)
+
+[node name="Platform" parent="Platform" instance=ExtResource("2_edwh2")]
+position = Vector2(270, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-544, 500.27)
+
+[node name="Exit" type="Button" parent="."]
+offset_left = -811.0
+offset_top = 20.2696
+offset_right = -770.0
+offset_bottom = 51.2696
+text = "EXIT"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
