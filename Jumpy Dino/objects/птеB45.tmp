@@ -108,7 +108,8 @@ physics_material_override = SubResource("PhysicsMaterial_fibyh")
 position = Vector2(14, 0)
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_4onlf")
-frame_progress = 0.513082
+frame_progress = 0.690472
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(0.0864182, 0)

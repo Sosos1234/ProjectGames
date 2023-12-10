@@ -6,6 +6,7 @@ extends Path2D
 
 @onready var path = $PathFollow2D
 @onready var anim = $AnimationPlayer
+@onready var pter = $AnimatableBody2D/AnimatedSprite2D
 
 func _ready():
 	if not loop:
@@ -15,3 +16,7 @@ func _ready():
 
 func _process(_delta):
 	path.progress += speed
+	if path.progress == 0:
+		pter.offset.flip_h = true
+	elif path.progress == 1:
+		pter.flip_h = false
