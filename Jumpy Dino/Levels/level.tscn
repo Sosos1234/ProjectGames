@@ -35,7 +35,7 @@ func _process(_delta):
 script = ExtResource("1_55joy")
 
 [node name="Player" parent="." instance=ExtResource("2_ql3l8")]
-position = Vector2(233, 893)
+position = Vector2(262, 893)
 
 [node name="Area2D" type="Area2D" parent="."]
 

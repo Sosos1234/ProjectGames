@@ -17,16 +17,16 @@ var level_templates = [
 ]
 var current_level = 0
 var platform_scene = preload("res://objects/platform.tscn")
-var pterodactyl_scene = preload("res://objects/птеродактиль.tscn")
+var pterodactyl_scene = preload("res://objects/pterodactyl.tscn")
+var pterodactyl = pterodactyl_scene.instantiate()
 
 func _ready():
+	Signals.emit_signal("GameStarted")
 	generate_level(posMaxYForGeneration, posMinYForGeneration)
 
 func generate_level(posMaxYForGeneration, posMinYForGeneration):
 	var positionYPlayer = $Player.position.y
 	var valueForChanceOnPterodactyl = randi_range(1, 7)
-	print(valueForChanceOnPterodactyl)
-	var pterodactyl = pterodactyl_scene.instantiate()
 	for x in level_templates[current_level % level_templates.size()]:
 		var platform = platform_scene.instantiate()
 		platform.position.x = x
@@ -42,10 +42,8 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 		pterodactyl.position.x = 0
 		pterodactyl.position.y = randi_range(posYPlayer - 300, posYPlayer - 1000)
 		add_child(pterodactyl)
-		print($Player.position.y)
 		
 	current_level += 1
-	print(current_level)
 	if current_level % 20 == 0 && current_level <= 60:
 		YPos += 50
 		for i in range(level_templates.size()):
@@ -65,13 +63,12 @@ func _on_area_2d_body_entered(body):
 		body.velocity.y = 0
 		body.speed = 0
 		body.gravity = 0 
+		get_tree().change_scene_to_file("res://Levels/menu.tscn")
 
 func _on_area_2d_2_body_entered(body):
 	if body.name == "Player":
 		body.position.x = %transitionWall1.position.x + 70
-		print(%transitionWall1.position.x, "left")
 
 func _on_area_2d_3_body_entered(body):
 	if body.name == "Player":
 		body.position.x = %transitionWall2.position.x - 10
-		print(%transitionWall2.position.x, "right")

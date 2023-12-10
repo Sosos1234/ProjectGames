@@ -1,10 +1,6 @@
 extends Camera2D
 
-var maxPositionY: float = 10000
-
-
-func _ready():
-	pass 
+var maxPositionY: float = 460
 
 func _process(_delta):
 	if maxPositionY > $"..".position.y:

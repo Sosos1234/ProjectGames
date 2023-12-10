@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cgu6mxp2emtp0"]
 
-[ext_resource type="Texture2D" uid="uid://cn431cva5kecc" path="res://Sprites/Спрайт-0005 (3).PNG" id="1_nbyjq"]
+[ext_resource type="Texture2D" uid="uid://byemd7t11q4dw" path="res://Sprites/photo_2023-12-10_17-40-58.jpg" id="1_wis5s"]
 
 [node name="BG" type="ParallaxBackground"]
 
@@ -8,6 +8,6 @@
 motion_mirroring = Vector2(0, 960)
 
 [node name="Mossy-BackgroundDecoration" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(270, 479.5)
-scale = Vector2(0.5, 0.500521)
-texture = ExtResource("1_nbyjq")
+position = Vector2(270, 480)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_wis5s")

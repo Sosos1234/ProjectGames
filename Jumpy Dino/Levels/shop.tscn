@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7ibndq0r3dho"]
+
+[ext_resource type="PackedScene" uid="uid://3v5t6m4rm2i6" path="res://PLAYER/person.tscn" id="2_8xyev"]
+[ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="2_edwh2"]
+[ext_resource type="Texture2D" uid="uid://c0ptgs17xmvss" path="res://Sprites/Спрайт-0005.PNG" id="3_s2t63"]
+
+[sub_resource type="GDScript" id="GDScript_mpi8k"]
+script/source = "extends Node2D
+
+func _on_exit_pressed():
+	get_tree().change_scene_to_file(\"res://Levels/menu.tscn\")
+"
+
+[node name="shop" type="Node2D"]
+script = SubResource("GDScript_mpi8k")
+
+[node name="Спрайт-0005" type="Sprite2D" parent="."]
+position = Vector2(270, 479.611)
+scale = Vector2(0.5, 0.500405)
+texture = ExtResource("3_s2t63")
+
+[node name="Platform" parent="." instance=ExtResource("2_edwh2")]
+position = Vector2(133, 376)
+
+[node name="Platform" parent="Platform" instance=ExtResource("2_edwh2")]
+position = Vector2(270, 0)
+
+[node name="Platform2" parent="." instance=ExtResource("2_edwh2")]
+position = Vector2(263, 950)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(270, 479.73)
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 461.0
+offset_top = 908.0
+offset_right = 540.0
+offset_bottom = 939.0
+text = "Выход"
+
+[node name="Player" parent="." instance=ExtResource("2_8xyev")]
+position = Vector2(262, 894)
+script = null
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

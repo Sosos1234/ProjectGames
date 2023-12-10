@@ -1,10 +1,11 @@
 extends Node2D
 
-func _process(_delta):
+func _ready():
+	Signals.connect("GameStarted", Game)
+
+func Game():
 	if $"../Player".position.y < (self.position.y-1000):
-		print(self.name)
 		queue_free()
-		
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player": 
@@ -13,3 +14,4 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	if body.name == "Player": 
 		$StaticBody2D/CollisionShape2D.position.x -= 5000 
+

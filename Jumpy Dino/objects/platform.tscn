@@ -9,7 +9,7 @@
 size = Vector2(84, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nmac"]
-size = Vector2(86, 82)
+size = Vector2(88, 82)
 
 [node name="Platform" type="Node2D"]
 script = ExtResource("1_sppbe")
