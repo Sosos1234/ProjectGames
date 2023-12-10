@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://x4tib17qfdep"]
-
-[ext_resource type="PackedScene" uid="uid://3v5t6m4rm2i6" path="res://PLAYER/person.tscn" id="1_rf8u3"]
-
-[node name="Player" instance=ExtResource("1_rf8u3")]
-
-[node name="AnimatedSprite2D" parent="." index="2"]
-autoplay = "IDLE"
