@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcwvd3iqluysf"]
+[gd_scene load_steps=12 format=3 uid="uid://bcwvd3iqluysf"]
 
 [ext_resource type="Texture2D" uid="uid://bj36kyirg1638" path="res://Sprites/Free/Traps/Fan/Off.png" id="1_7vpe4"]
 [ext_resource type="Script" path="res://objects/птеродактиль.gd" id="1_qs385"]
+[ext_resource type="Script" path="res://objects/Area2D.gd" id="3_oy13g"]
 
 [sub_resource type="Curve2D" id="Curve2D_d8fdu"]
 _data = {
@@ -23,7 +24,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om7on"]
-size = Vector2(58, 20)
+size = Vector2(57.0696, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huekp"]
+size = Vector2(57, 2)
 
 [sub_resource type="Animation" id="Animation_l6r0n"]
 resource_name = "move"
@@ -70,7 +74,8 @@ loop = false
 speed_scale = 0.6
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(27.9136, 0)
+position = Vector2(45.0696, 0)
+progress = 17.0661
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
@@ -84,8 +89,15 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_4onlf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(1, 0)
+position = Vector2(1.46521, 0)
 shape = SubResource("RectangleShape2D_om7on")
+
+[node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
+script = ExtResource("3_oy13g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
+position = Vector2(1.43043, -10)
+shape = SubResource("RectangleShape2D_huekp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../PathFollow2D")
