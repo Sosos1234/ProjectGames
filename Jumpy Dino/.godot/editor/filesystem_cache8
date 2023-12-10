@@ -1,0 +1,34 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1702242267
+::res://Levels/::1702242238
+Area2D2.gd::GDScript::-1::1702241946::0::1::::<>Area2D<>::
+bg.tscn::PackedScene::5237166873039926563::1702241946::0::1::::<><>::uid://byemd7t11q4dw::::res://Sprites/photo_2023-12-10_17-40-58.jpg
+Exit.gd::GDScript::-1::1702241946::0::1::::<>Button<>::
+level.gd::GDScript::-1::1702241946::0::1::::<>Node2D<>::
+level.tscn::PackedScene::3406802077362845890::1702241946::0::1::::<><>::res://Levels/level.gd<>uid://3v5t6m4rm2i6::::res://PLAYER/person.tscn<>uid://cgu6mxp2emtp0::::res://Levels/bg.tscn<>res://Levels/Area2D2.gd<>uid://cna66masx2f85::::res://objects/platform.tscn
+menu.tscn::PackedScene::2573586454885333964::1702242238::0::1::::<><>::uid://cna66masx2f85::::res://objects/platform.tscn<>uid://cgu6mxp2emtp0::::res://Levels/bg.tscn<>uid://cv2shx37rs0h5::::res://PLAYER/person.tscn
+Node2D.gd::GDScript::-1::1702241946::0::1::::<>Node2D<>::
+shop.tscn::PackedScene::7035483501595875352::1702241946::0::1::::<><>::uid://3v5t6m4rm2i6::::res://PLAYER/person.tscn<>uid://cna66masx2f85::::res://objects/platform.tscn<>uid://c0ptgs17xmvss::::res://Sprites/Спрайт-0005.PNG
+::res://objects/::1702242237
+AnimatableBody2D.gd::GDScript::-1::1702241946::0::1::::<>AnimatableBody2D<>::
+platform.gd::GDScript::-1::1702241946::0::1::::<>Node2D<>::
+platform.tscn::PackedScene::5687234552197278492::1702242236::0::1::::<><>::res://objects/platform.gd<>uid://by5e62r40ucar::::res://Sprites/Free/Traps/Spike Head/Idle.png
+pterodactyl.gd::GDScript::-1::1702241946::0::1::::<>Path2D<>::
+pterodactyl.tscn::PackedScene::2573496579543011609::1702241946::0::1::::<><>::res://objects/pterodactyl.gd<>uid://d07imyi570keh::::res://Sprites/Спрайт-0006-Sheet-Sheet.png<>res://objects/AnimatableBody2D.gd
+::res://PLAYER/::1702242238
+CameraPlayer.gd::GDScript::-1::1702241946::0::1::::<>Camera2D<>::
+person.tscn::PackedScene::6303651942340591632::1702242238::0::1::::<><>::res://PLAYER/PLAYER.gd<>uid://bcfmg2374djo4::::res://Sprites/Спрайт-0003-Sheet.png<>res://PLAYER/CameraPlayer.gd
+PLAYER.gd::GDScript::-1::1702241946::0::1::::<>CharacterBody2D<>::
+::res://Signals/::1702241946
+node.tscn::PackedScene::948047596960568742::1702241946::0::1::::<><>::res://Signals/Signals.gd
+Signals.gd::GDScript::-1::1702241946::0::1::::<>Node<>::
+::res://Sprites/::1702242105
+photo_2023-12-10_17-40-58.jpg::CompressedTexture2D::4079946114632246416::1702241946::1702241976::1::::<><>::
+Спрайт-0003-Sheet.png::CompressedTexture2D::2537861041293885317::1702242102::1702242105::1::::<><>::
+Спрайт-0006-Sheet-Sheet.png::CompressedTexture2D::8980551669954674623::1702241946::1702241977::1::::<><>::
+::res://Sprites/Free/::1702241946
+::res://Sprites/Free/Traps/::1702241946
+::res://Sprites/Free/Traps/Spike Head/::1702242224
+Idle.png::CompressedTexture2D::4133183936953742249::1702242220::1702242224::1::::<><>::
+Right Hit (54x52).png::CompressedTexture2D::4809501193267701595::1702241946::1702241976::1::::<><>::
+Top Hit (54x52).png::CompressedTexture2D::1014916848327870791::1702241946::1702241976::1::::<><>::
