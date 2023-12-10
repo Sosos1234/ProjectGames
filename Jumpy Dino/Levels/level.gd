@@ -24,7 +24,7 @@ func _ready():
 
 func generate_level(posMaxYForGeneration, posMinYForGeneration):
 	var positionYPlayer = $Player.position.y
-	var valueForChanceOnPterodactyl = randi_range(1, 4)
+	var valueForChanceOnPterodactyl = randi_range(1, 7)
 	print(valueForChanceOnPterodactyl)
 	var pterodactyl = pterodactyl_scene.instantiate()
 	for x in level_templates[current_level % level_templates.size()]:
@@ -37,11 +37,10 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 		if maxPosPlatform > posPlatform:
 			maxPosPlatform = posPlatform
 		
-	if current_level % valueForChanceOnPterodactyl == 0:
+	if current_level % valueForChanceOnPterodactyl == 0 && current_level >= 12:
 		var posYPlayer = int(positionYPlayer)
 		pterodactyl.position.x = 0
 		pterodactyl.position.y = randi_range(posYPlayer - 300, posYPlayer - 1000)
-		print(pterodactyl.position.y)
 		add_child(pterodactyl)
 		print($Player.position.y)
 		

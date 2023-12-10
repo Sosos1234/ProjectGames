@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bosjsdsmm6rcc"]
+[gd_scene load_steps=11 format=3 uid="uid://bosjsdsmm6rcc"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_55joy"]
 [ext_resource type="PackedScene" uid="uid://3v5t6m4rm2i6" path="res://PLAYER/person.tscn" id="2_ql3l8"]
@@ -28,6 +28,8 @@ func _process(_delta):
 	text = \"Деньги: \" + str($\"../../Player\".money)
 
 "
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1p05"]
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_55joy")
@@ -82,6 +84,18 @@ theme_override_font_sizes/font_size = 50
 text = "
 "
 script = SubResource("GDScript_03uwr")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(270, 1)
+scale = Vector2(-270.005, 959.001)
+texture_normal = SubResource("AtlasTexture_q1p05")
+action = "left"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(540, 1)
+scale = Vector2(-270.005, 959.001)
+texture_normal = SubResource("AtlasTexture_q1p05")
+action = "right"
 
 [node name="Platform" parent="." instance=ExtResource("5_qyija")]
 position = Vector2(16, 950)

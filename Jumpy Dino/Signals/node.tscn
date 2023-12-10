@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://nrig8ppnbftu"]
+
+[ext_resource type="Script" path="res://Signals/Signals.gd" id="1_efoqs"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_efoqs")

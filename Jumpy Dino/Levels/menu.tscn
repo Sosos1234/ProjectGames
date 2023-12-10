@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://tuvvpjkriet4"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 392.0
+offset_bottom = 274.0
+text = "Ваня делай
+"
