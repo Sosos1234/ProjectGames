@@ -1,18 +1,18 @@
 extends Node2D
 
-var max_level = 0
+var YPos = 150
 var posMaxYForGeneration = 100
 var posMinYForGeneration = 700
+var posAveYForGeneration = posMinYForGeneration
 var maxPosPlatform = 0
 var posPlatform = 0
 var level_templates = [
-	[0, 50, 150, 300, 400, 540],
-	[0, 150, 300, 420, 480, 500],
-	[0, 200, 250, 400, 460, 520],
-	[0, 500, 400, 300, 200, 100],
-	[20, 200, 300, 100, 540, 250]
+	[150, 200, 40, 400, 320, 500],
+	[480, 150, 500, 420, 40, 300],
+	[40, 200, 280, 520, 460, 150],
+	[200, 500, 400, 90, 300, 140],
+	[60, 200, 400, 100, 320, 250]
 ]
-
 var current_level = 0
 var platform_scene = preload("res://objects/platform.tscn")
 
@@ -20,17 +20,21 @@ func _ready():
 	generate_level(posMaxYForGeneration, posMinYForGeneration)
 
 func generate_level(posMaxYForGeneration, posMinYForGeneration):
-	print(posMinYForGeneration)
-	print(posMaxYForGeneration)
 	for x in level_templates[current_level % level_templates.size()]:
+		print(x)
 		var platform = platform_scene.instantiate()
 		platform.position.x = x
-		platform.position.y = randf_range(posMaxYForGeneration, posMinYForGeneration)
+		platform.position.y = posAveYForGeneration
 		posPlatform = platform.position.y
 		add_child(platform)
+		posAveYForGeneration -= YPos
 		if maxPosPlatform > posPlatform:
 			maxPosPlatform = posPlatform
 	current_level += 1
+	if current_level % 20 == 0 && current_level <= 60:
+		YPos += 50
+		for i in range(level_templates.size()):
+			level_templates[i].remove_at(level_templates[i].size() - 1)
 
 func _process(delta):
 	var cam = get_node("Player/Camera2D")
