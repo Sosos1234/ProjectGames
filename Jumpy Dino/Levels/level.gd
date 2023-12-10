@@ -31,7 +31,7 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 		if maxPosPlatform > posPlatform:
 			maxPosPlatform = posPlatform
 	current_level += 1
-	if current_level % 20 == 0 && current_level <= 60:
+	if current_level % 15 == 0 && current_level <= 45:
 		YPos += 50
 		for i in range(level_templates.size()):
 			level_templates[i].remove_at(level_templates[i].size() - 1)

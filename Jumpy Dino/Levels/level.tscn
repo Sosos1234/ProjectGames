@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bosjsdsmm6rcc"]
 
-[ext_resource type="Script" path="res://Levels/level.gd" id="1_55joy"]
-[ext_resource type="PackedScene" uid="uid://3v5t6m4rm2i6" path="res://PLAYER/person.tscn" id="2_ql3l8"]
+[ext_resource type="Script" path="res://PLAYER/PLAYER.gd" id="1_fpx14"]
+[ext_resource type="PackedScene" uid="uid://x4tib17qfdep" path="res://PLAYER/player.tscn" id="2_3tbhy"]
 [ext_resource type="PackedScene" uid="uid://cgu6mxp2emtp0" path="res://Levels/bg.tscn" id="4_dmsj0"]
 [ext_resource type="Script" path="res://Levels/Area2D2.gd" id="5_0f6w1"]
 [ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="5_qyija"]
@@ -30,10 +30,10 @@ func _process(delta):
 "
 
 [node name="level" type="Node2D"]
-script = ExtResource("1_55joy")
+script = ExtResource("1_fpx14")
 
-[node name="Player" parent="." instance=ExtResource("2_ql3l8")]
-position = Vector2(233, 893)
+[node name="Player" parent="." instance=ExtResource("2_3tbhy")]
+position = Vector2(263, 891)
 
 [node name="Area2D" type="Area2D" parent="."]
 
