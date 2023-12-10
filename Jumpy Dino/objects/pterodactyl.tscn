@@ -1,87 +1,59 @@
-<<<<<<< HEAD
-[gd_scene load_steps=17 format=3 uid="uid://bcwvd3iqluysf"]
+[gd_scene load_steps=16 format=3 uid="uid://bcwvd3iqluysf"]
 
-[ext_resource type="Script" path="res://objects/птеродактиль.gd" id="1_qs385"]
-[ext_resource type="Script" path="res://objects/AnimatableBody2D.gd" id="2_6bnls"]
-[ext_resource type="Texture2D" uid="uid://d07imyi570keh" path="res://Sprites/Спрайт-0006-Sheet-Sheet.png" id="2_8r0dq"]
+[ext_resource type="Script" path="res://objects/pterodactyl.gd" id="1_8kskb"]
+[ext_resource type="Texture2D" uid="uid://d07imyi570keh" path="res://Sprites/Спрайт-0006-Sheet-Sheet.png" id="2_noiox"]
+[ext_resource type="Script" path="res://objects/AnimatableBody2D.gd" id="2_vh826"]
 
 [sub_resource type="Curve2D" id="Curve2D_d8fdu"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 475, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 460, 0)
 }
 point_count = 2
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fibyh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n3k7j"]
-atlas = ExtResource("2_8r0dq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ahxu"]
+atlas = ExtResource("2_noiox")
 region = Rect2(0, 0, 2000, 1000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wyl60"]
-atlas = ExtResource("2_8r0dq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwv38"]
+atlas = ExtResource("2_noiox")
 region = Rect2(2000, 0, 2000, 1000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dpb3f"]
-atlas = ExtResource("2_8r0dq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2pl2"]
+atlas = ExtResource("2_noiox")
 region = Rect2(4000, 0, 2000, 1000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ew8y"]
-atlas = ExtResource("2_8r0dq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wc3d"]
+atlas = ExtResource("2_noiox")
 region = Rect2(2000, 0, 2000, 1000)
 
-=======
-[gd_scene load_steps=10 format=3 uid="uid://bcwvd3iqluysf"]
-
-[ext_resource type="Texture2D" uid="uid://bj36kyirg1638" path="res://Sprites/Free/Traps/Fan/Off.png" id="1_7vpe4"]
-[ext_resource type="Script" path="res://objects/птеродактиль.gd" id="1_qs385"]
-
-[sub_resource type="Curve2D" id="Curve2D_d8fdu"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 510, 0)
-}
-point_count = 3
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fibyh"]
-
->>>>>>> 463a80c6165497400e74d7a850f2006369ffcb1c
 [sub_resource type="SpriteFrames" id="SpriteFrames_4onlf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-<<<<<<< HEAD
-"texture": SubResource("AtlasTexture_n3k7j")
+"texture": SubResource("AtlasTexture_3ahxu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wyl60")
+"texture": SubResource("AtlasTexture_iwv38")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dpb3f")
+"texture": SubResource("AtlasTexture_e2pl2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0ew8y")
-=======
-"texture": ExtResource("1_7vpe4")
->>>>>>> 463a80c6165497400e74d7a850f2006369ffcb1c
+"texture": SubResource("AtlasTexture_7wc3d")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 7.0
 }]
 
-<<<<<<< HEAD
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dnryq"]
-radius = 15.0
-height = 138.017
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0fdhe"]
+radius = 14.0
+height = 113.827
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rn4be"]
-size = Vector2(138, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkeo8"]
-size = Vector2(136, 22)
-=======
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_om7on"]
-size = Vector2(58, 20)
->>>>>>> 463a80c6165497400e74d7a850f2006369ffcb1c
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r6m6"]
+size = Vector2(114, 23.75)
 
 [sub_resource type="Animation" id="Animation_aoyof"]
 length = 0.001
@@ -122,73 +94,53 @@ _data = {
 }
 
 [node name="Pterodactyl" type="Path2D"]
+position = Vector2(40, 0)
 curve = SubResource("Curve2D_d8fdu")
-script = ExtResource("1_qs385")
+script = ExtResource("1_8kskb")
 loop = false
 speed_scale = 0.6
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-<<<<<<< HEAD
-position = Vector2(465.009, 0)
-progress = 399.0
-=======
-position = Vector2(27.9136, 0)
->>>>>>> 463a80c6165497400e74d7a850f2006369ffcb1c
+position = Vector2(28, 0)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-<<<<<<< HEAD
-position = Vector2(465.009, 0)
+position = Vector2(28, 0)
 physics_material_override = SubResource("PhysicsMaterial_fibyh")
-script = ExtResource("2_6bnls")
+script = ExtResource("2_vh826")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
-position = Vector2(11, 0)
-scale = Vector2(0.13, 0.13)
+position = Vector2(-8.91358, -3)
+scale = Vector2(0.142, 0.142)
 sprite_frames = SubResource("SpriteFrames_4onlf")
-frame_progress = 0.955136
-flip_h = true
+frame_progress = 0.549628
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(9, 3)
+position = Vector2(1, 0)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_dnryq")
+shape = SubResource("CapsuleShape2D_0fdhe")
 
 [node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
-position = Vector2(8.99139, 12)
-shape = SubResource("RectangleShape2D_rn4be")
+position = Vector2(1, 9)
+shape = SubResource("RectangleShape2D_7r6m6")
 
 [node name="Area2D2" type="Area2D" parent="AnimatableBody2D"]
+position = Vector2(0.0864182, -13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D2"]
-position = Vector2(7.99139, -9)
-shape = SubResource("RectangleShape2D_jkeo8")
-=======
-position = Vector2(27.9136, 0)
-physics_material_override = SubResource("PhysicsMaterial_fibyh")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
-scale = Vector2(2.5, 2.5)
-sprite_frames = SubResource("SpriteFrames_4onlf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_om7on")
->>>>>>> 463a80c6165497400e74d7a850f2006369ffcb1c
+position = Vector2(0.913582, 1.875)
+shape = SubResource("RectangleShape2D_7r6m6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../PathFollow2D")
 libraries = {
 "": SubResource("AnimationLibrary_b5eda")
 }
-<<<<<<< HEAD
 
 [connection signal="body_entered" from="AnimatableBody2D/Area2D" to="AnimatableBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="AnimatableBody2D/Area2D2" to="AnimatableBody2D" method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="AnimatableBody2D/Area2D2" to="AnimatableBody2D" method="_on_area_2d_2_body_exited"]
-=======
->>>>>>> 463a80c6165497400e74d7a850f2006369ffcb1c

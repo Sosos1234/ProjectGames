@@ -4,14 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cgu6mxp2emtp0" path="res://Levels/bg.tscn" id="2_4qkqx"]
 [ext_resource type="PackedScene" uid="uid://3v5t6m4rm2i6" path="res://PLAYER/person.tscn" id="3_k7g1p"]
 
-[sub_resource type="GDScript" id="GDScript_6eahc"]
-resource_name = "Play"
-script/source = "extends Button
-
-func _on_pressed():
-	get_tree().change_scene_to_file(\"res://Levels/level.tscn\")
-"
-
 [sub_resource type="GDScript" id="GDScript_5yx8g"]
 resource_name = "shop"
 script/source = "extends Button
@@ -20,17 +12,15 @@ func _on_pressed():
 	get_tree().change_scene_to_file(\"res://Levels/shop.tscn\")
 "
 
-[node name="Menu" type="Node2D"]
+[sub_resource type="GDScript" id="GDScript_6eahc"]
+resource_name = "Play"
+script/source = "extends Button
 
-[node name="Play" type="Button" parent="."]
-offset_left = 173.0
-offset_top = 739.0
-offset_right = 367.0
-offset_bottom = 814.0
-theme_override_font_sizes/font_size = 50
-text = "ИГРАТЬ
+func _on_pressed():
+	get_tree().change_scene_to_file(\"res://Levels/level.tscn\")
 "
-script = SubResource("GDScript_6eahc")
+
+[node name="Menu" type="Node2D"]
 
 [node name="Shop" type="Button" parent="."]
 offset_left = 461.0
@@ -62,6 +52,19 @@ position = Vector2(508, 950)
 [node name="Platform6" parent="." instance=ExtResource("1_mnmfu")]
 position = Vector2(426, 950)
 
+[node name="Platform8" parent="." instance=ExtResource("1_mnmfu")]
+position = Vector2(264, 768)
+
+[node name="Play" type="Button" parent="."]
+offset_left = 173.0
+offset_top = 739.0
+offset_right = 372.0
+offset_bottom = 816.0
+theme_override_font_sizes/font_size = 50
+text = "ИГРАТЬ
+"
+script = SubResource("GDScript_6eahc")
+
 [node name="BG" parent="." instance=ExtResource("2_4qkqx")]
 scroll_offset = Vector2(245, -428)
 
@@ -69,5 +72,5 @@ scroll_offset = Vector2(245, -428)
 position = Vector2(262, 894)
 script = null
 
-[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
 [connection signal="pressed" from="Shop" to="Shop" method="_on_pressed"]
+[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]

@@ -5,10 +5,10 @@ extends AnimatableBody2D
 func _ready():
 	anim.play("default")
 
-func _process(delta):
-	if self.position.x <= 67:
+func _process(_delta):
+	if self.position.x <= 29:
 		anim.flip_h = true
-	if self.position.x >= 464:
+	if self.position.x >= 459:
 		anim.flip_h = false
 
 func _on_area_2d_body_entered(body):

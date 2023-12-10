@@ -4,7 +4,7 @@ func _ready():
 	Signals.connect("GameStarted", Game)
 
 func Game():
-	if $"../Player".position.y < (self.position.y-1000):
+	if $"../Player".position.y < (self.position.y-700):
 		queue_free()
 
 func _on_area_2d_body_entered(body):

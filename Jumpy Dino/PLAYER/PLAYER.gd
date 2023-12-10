@@ -41,7 +41,7 @@ func on_pteradactyl():
 	JUMP_VELOCITY *= 1.5
 	
 func non_on_pteradactyl():
-	JUMP_VELOCITY /= 1.5 
+	JUMP_VELOCITY /= 1.5
 
 func points(_delta):
 	distance = self.position.y - 909

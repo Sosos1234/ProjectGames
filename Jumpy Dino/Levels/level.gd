@@ -15,10 +15,9 @@ var level_templates = [
 	[200, 500, 400, 90, 300, 140],
 	[60, 200, 400, 100, 320, 250]
 ]
-var current_level = 0
+var current_level = 13
 var platform_scene = preload("res://objects/platform.tscn")
 var pterodactyl_scene = preload("res://objects/pterodactyl.tscn")
-var pterodactyl = pterodactyl_scene.instantiate()
 
 func _ready():
 	Signals.emit_signal("GameStarted")
@@ -39,10 +38,11 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 		
 	if current_level % valueForChanceOnPterodactyl == 0 && current_level >= 12:
 		var posYPlayer = int(positionYPlayer)
+		var pterodactyl = pterodactyl_scene.instantiate()
 		pterodactyl.position.x = 0
 		pterodactyl.position.y = randi_range(posYPlayer - 300, posYPlayer - 1000)
 		add_child(pterodactyl)
-		
+
 	current_level += 1
 	if current_level % 20 == 0 && current_level <= 60:
 		YPos += 50
@@ -58,7 +58,6 @@ func _process(_delta):
 		generate_level(posMinYForGeneration, posMaxYForGeneration)
 
 func _on_area_2d_body_entered(body):
-	var cam = get_node("Player/Camera2D")
 	if body.name == "Player":
 		body.velocity.y = 0
 		body.speed = 0

@@ -97,6 +97,9 @@ scale = Vector2(-270.005, 959.001)
 texture_normal = SubResource("AtlasTexture_q1p05")
 action = "right"
 
+[node name="Platform8" parent="." instance=ExtResource("5_qyija")]
+position = Vector2(264, 768)
+
 [node name="Platform" parent="." instance=ExtResource("5_qyija")]
 position = Vector2(16, 950)
 
