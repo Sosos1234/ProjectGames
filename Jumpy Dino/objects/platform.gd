@@ -1,6 +1,6 @@
 extends Node2D
 
-func _process(delta):
+func _process(_delta):
 	if $"../Player".position.y < (self.position.y-1000):
 		print(self.name)
 		queue_free()

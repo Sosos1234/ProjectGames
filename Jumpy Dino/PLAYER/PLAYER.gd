@@ -39,7 +39,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func points(delta):
+func points(_delta):
 	distance = self.position.y - 909
 	score = abs(distance) / 10
 	if MaxScore < score:
@@ -47,5 +47,5 @@ func points(delta):
 	gold(score)
 
 
-func gold(delta):
+func gold(_delta):
 	money = MaxScore / 30

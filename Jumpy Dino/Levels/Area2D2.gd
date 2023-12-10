@@ -5,7 +5,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var PlayerPos = $"../Player".position.y - 150
 	$Area2D/transitionWall2.position.y = PlayerPos
 	$Area2D2/transitionWall1.position.y = PlayerPos

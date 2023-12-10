@@ -1,5 +1,7 @@
 extends Node2D
 
+
+var HaveBeenPterodactyl = false
 var YPos = 150
 var posMaxYForGeneration = 100
 var posMinYForGeneration = 700
@@ -15,28 +17,42 @@ var level_templates = [
 ]
 var current_level = 0
 var platform_scene = preload("res://objects/platform.tscn")
+var pterodactyl_scene = preload("res://objects/птеродактиль.tscn")
 
 func _ready():
 	generate_level(posMaxYForGeneration, posMinYForGeneration)
 
 func generate_level(posMaxYForGeneration, posMinYForGeneration):
+	var positionYPlayer = $Player.position.y
+	var valueForChanceOnPterodactyl = randi_range(1, 4)
+	print(valueForChanceOnPterodactyl)
+	var pterodactyl = pterodactyl_scene.instantiate()
 	for x in level_templates[current_level % level_templates.size()]:
-		print(x)
 		var platform = platform_scene.instantiate()
 		platform.position.x = x
-		platform.position.y = posAveYForGeneration
+		platform.position.y = randf_range(posAveYForGeneration, posAveYForGeneration - 100)
 		posPlatform = platform.position.y
 		add_child(platform)
 		posAveYForGeneration -= YPos
 		if maxPosPlatform > posPlatform:
 			maxPosPlatform = posPlatform
+		
+	if current_level % valueForChanceOnPterodactyl == 0:
+		var posYPlayer = int(positionYPlayer)
+		pterodactyl.position.x = 0
+		pterodactyl.position.y = randi_range(posYPlayer - 300, posYPlayer - 1000)
+		print(pterodactyl.position.y)
+		add_child(pterodactyl)
+		print($Player.position.y)
+		
 	current_level += 1
+	print(current_level)
 	if current_level % 20 == 0 && current_level <= 60:
 		YPos += 50
 		for i in range(level_templates.size()):
 			level_templates[i].remove_at(level_templates[i].size() - 1)
 
-func _process(delta):
+func _process(_delta):
 	var cam = get_node("Player/Camera2D")
 	%WallOfDeath.position.y = cam.limit_bottom + 100
 	if $Player.position.y < (maxPosPlatform+300):
