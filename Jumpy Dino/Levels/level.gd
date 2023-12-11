@@ -15,9 +15,10 @@ var level_templates = [
 	[200, 500, 400, 90, 300, 140],
 	[60, 200, 400, 100, 320, 250]
 ]
-var current_level = 13
+var current_level = 100
 var platform_scene = preload("res://objects/platform.tscn")
 var pterodactyl_scene = preload("res://objects/pterodactyl.tscn")
+var shishulya_scene = preload("res://objects/rigid_body_2d.tscn")
 
 func _ready():
 	Signals.emit_signal("GameStarted")
@@ -35,7 +36,23 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 		posAveYForGeneration -= YPos
 		if maxPosPlatform > posPlatform:
 			maxPosPlatform = posPlatform
-		
+	
+	if current_level > 5 && current_level < 40:
+		for x in 1:
+			var posYPlayer = int(positionYPlayer)
+			var shishulya = shishulya_scene.instantiate()
+			shishulya.position.x = randi_range(20, 520)
+			shishulya.position.y = randi_range(posYPlayer - 300, posYPlayer - 1000)
+			add_child(shishulya)
+	
+	if current_level > 40:
+		for x in 2:
+			var posYPlayer = int(positionYPlayer)
+			var shishulya = shishulya_scene.instantiate()
+			shishulya.position.x = randi_range(20, 520)
+			shishulya.position.y = randi_range(posYPlayer - 700, posYPlayer - 1000)
+			add_child(shishulya)
+	
 	if current_level % valueForChanceOnPterodactyl == 0 && current_level >= 12:
 		var posYPlayer = int(positionYPlayer)
 		var pterodactyl = pterodactyl_scene.instantiate()

@@ -1,3 +1,8 @@
-res://objects/platform.tscn
+res://objects/rigid_body_2d.tscn
 res://Levels/menu.tscn
 res://PLAYER/person.tscn
+res://objects/platform.tscn
+res://Levels/level.tscn
+res://objects/rigid_body_2d.gd
+res://Levels/level.gd
+res://objects/pterodactyl.tscn

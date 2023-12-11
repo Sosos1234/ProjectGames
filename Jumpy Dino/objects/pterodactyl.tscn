@@ -98,7 +98,7 @@ position = Vector2(40, 0)
 curve = SubResource("Curve2D_d8fdu")
 script = ExtResource("1_8kskb")
 loop = false
-speed_scale = 0.6
+speed_scale = 0.5
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(28, 0)
