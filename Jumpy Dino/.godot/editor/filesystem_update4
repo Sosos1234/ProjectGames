@@ -2,4 +2,17 @@ res://Levels/menu.tscn
 res://PLAYER/person.tscn
 res://objects/platform.tscn
 res://objects/rigid_body_2d.tscn
+<<<<<<< HEAD
+=======
+res://Levels/level.tscn
+>>>>>>> 2b02d3502bf12bee3cc21dcbde01580b0a552769
 res://objects/pterodactyl.tscn
+res://Levels/level.gd
+res://PLAYER/PLAYER.gd
+res://objects/rigid_body_2d.gd
+res://Signals/Signals.gd
+res://Gold.gd
+res://objects/gold.tscn
+res://Levels/menu.gd
+res://global.gd
+res://Levels/shop.tscn
