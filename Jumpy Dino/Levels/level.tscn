@@ -1,16 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://bosjsdsmm6rcc"]
+[gd_scene load_steps=16 format=3 uid="uid://bosjsdsmm6rcc"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_55joy"]
 [ext_resource type="PackedScene" uid="uid://cv2shx37rs0h5" path="res://PLAYER/person.tscn" id="2_ql3l8"]
 [ext_resource type="PackedScene" uid="uid://cgu6mxp2emtp0" path="res://Levels/bg.tscn" id="4_dmsj0"]
 [ext_resource type="Script" path="res://Levels/Area2D2.gd" id="5_0f6w1"]
+[ext_resource type="Texture2D" uid="uid://cvvqsub03j26b" path="res://Sprites/монетка.png" id="5_03gfa"]
 [ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="5_qyija"]
+[ext_resource type="Texture2D" uid="uid://1b47i60surdx" path="res://Sprites/другиесердечки.png" id="6_0dmcu"]
+[ext_resource type="Texture2D" uid="uid://d0w4fup6dd4g1" path="res://Sprites/сердкечки-export.png" id="7_iaapc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndvjs"]
 size = Vector2(608, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6eng"]
 size = Vector2(13.75, 961.625)
+
+[sub_resource type="Theme" id="Theme_8ldjf"]
 
 [sub_resource type="GDScript" id="GDScript_t51w7"]
 script/source = "extends Label
@@ -24,12 +29,29 @@ func _process(_delta):
 resource_name = "Mon"
 script/source = "extends Label
 
+func _ready():
+	pass
+
 func _process(_delta):
-	text = \"Деньги: \" + str($\"../../Player\".money)
+	text = str(Global.playerMoney)
+	
 
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1p05"]
+
+[sub_resource type="GDScript" id="GDScript_0sjyk"]
+script/source = "extends TextureProgressBar
+
+
+
+func _ready():
+	Signals.connect(\"HpBarPlayer\", Hp_Bar)
+
+func Hp_Bar():
+	value += 33.4
+
+"
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_55joy")
@@ -71,18 +93,29 @@ shape = SubResource("RectangleShape2D_r6eng")
 [node name="Score" type="Label" parent="CanvasLayer"]
 offset_right = 107.0
 offset_bottom = 80.0
+theme = SubResource("Theme_8ldjf")
 theme_override_font_sizes/font_size = 50
 text = "
 "
 script = SubResource("GDScript_t51w7")
 
-[node name="Money" type="Label" parent="CanvasLayer"]
-offset_top = 80.0
-offset_right = 107.0
-offset_bottom = 160.0
-theme_override_font_sizes/font_size = 50
+[node name="Money" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(44, 124)
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("5_03gfa")
+
+[node name="Money" type="Label" parent="CanvasLayer/Money"]
+offset_left = 116.364
+offset_top = -160.0
+offset_right = 403.364
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 160
 text = "
 "
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 3
+text_direction = 1
 script = SubResource("GDScript_03uwr")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
@@ -96,6 +129,18 @@ position = Vector2(540, 1)
 scale = Vector2(-270.005, 959.001)
 texture_normal = SubResource("AtlasTexture_q1p05")
 action = "right"
+
+[node name="HpBarPlayer" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 541.0
+offset_top = 1.0
+offset_right = 1501.0
+offset_bottom = 797.0
+scale = Vector2(-0.228923, 0.271521)
+step = 33.34
+fill_mode = 1
+texture_under = ExtResource("7_iaapc")
+texture_progress = ExtResource("6_0dmcu")
+script = SubResource("GDScript_0sjyk")
 
 [node name="Platform8" parent="." instance=ExtResource("5_qyija")]
 position = Vector2(264, 768)

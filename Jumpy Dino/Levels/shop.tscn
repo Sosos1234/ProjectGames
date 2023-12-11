@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7ibndq0r3dho"]
+[gd_scene load_steps=7 format=3 uid="uid://c7ibndq0r3dho"]
 
-[ext_resource type="PackedScene" uid="uid://3v5t6m4rm2i6" path="res://PLAYER/person.tscn" id="2_8xyev"]
+[ext_resource type="PackedScene" uid="uid://cv2shx37rs0h5" path="res://PLAYER/person.tscn" id="2_8xyev"]
 [ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="2_edwh2"]
-[ext_resource type="Texture2D" uid="uid://c0ptgs17xmvss" path="res://Sprites/Спрайт-0005.PNG" id="3_s2t63"]
+[ext_resource type="Texture2D" uid="uid://byemd7t11q4dw" path="res://Sprites/photo_2023-12-10_17-40-58.jpg" id="3_s2t63"]
+[ext_resource type="Texture2D" uid="uid://cvvqsub03j26b" path="res://Sprites/монетка.png" id="4_x4f85"]
 
 [sub_resource type="GDScript" id="GDScript_mpi8k"]
 script/source = "extends Node2D
@@ -11,12 +12,25 @@ func _on_exit_pressed():
 	get_tree().change_scene_to_file(\"res://Levels/menu.tscn\")
 "
 
+[sub_resource type="GDScript" id="GDScript_moib3"]
+resource_name = "Mon"
+script/source = "extends Label
+
+func _ready():
+	pass
+
+func _process(_delta):
+	text = str(Global.playerMoney)
+	
+
+"
+
 [node name="shop" type="Node2D"]
 script = SubResource("GDScript_mpi8k")
 
 [node name="Спрайт-0005" type="Sprite2D" parent="."]
 position = Vector2(270, 479.611)
-scale = Vector2(0.5, 0.500405)
+scale = Vector2(0.75, 0.750607)
 texture = ExtResource("3_s2t63")
 
 [node name="Platform" parent="." instance=ExtResource("2_edwh2")]
@@ -41,5 +55,26 @@ text = "Выход"
 [node name="Player" parent="." instance=ExtResource("2_8xyev")]
 position = Vector2(262, 894)
 script = null
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Money" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(44, 44)
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("4_x4f85")
+
+[node name="Money" type="Label" parent="CanvasLayer/Money"]
+offset_left = 116.364
+offset_top = -160.0
+offset_right = 403.364
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 160
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 3
+text_direction = 1
+script = SubResource("GDScript_moib3")
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

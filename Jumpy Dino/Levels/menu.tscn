@@ -73,4 +73,5 @@ position = Vector2(262, 894)
 script = null
 
 [connection signal="pressed" from="Shop" to="Shop" method="_on_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
