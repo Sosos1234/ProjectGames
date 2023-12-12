@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-res://Levels/menu.tscn
-=======
 res://umbrella.gd
 res://objects/gold.tscn
 res://Signals/Signals.gd
@@ -15,4 +12,3 @@ res://objects/platform.tscn
 res://Levels/level.gd
 res://objects/rigid_body_2d.tscn
 res://objects/rigid_body_2d.gd
->>>>>>> viktor3
