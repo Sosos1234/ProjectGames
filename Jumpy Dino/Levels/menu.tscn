@@ -95,6 +95,11 @@ func _physics_process(delta):
 		anim2.hide()
 		anim3.hide()
 		anim4.show()
+	if Global.globalSkin == \"standartSkin\":
+		anim.show()
+		anim2.hide()
+		anim3.hide()
+		anim4.hide()
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aeq0d"]
@@ -260,6 +265,7 @@ offset_left = 151.0
 offset_top = 600.0
 offset_right = 359.0
 offset_bottom = 688.0
+action_mode = 0
 icon = ExtResource("2_oovk7")
 flat = true
 script = SubResource("GDScript_0hdxw")
@@ -269,6 +275,7 @@ offset_left = 158.0
 offset_top = 507.0
 offset_right = 366.0
 offset_bottom = 595.0
+action_mode = 0
 icon = ExtResource("1_stacs")
 flat = true
 script = SubResource("GDScript_5yx8g")
@@ -286,7 +293,6 @@ text = "
 "
 icon = ExtResource("2_pdydg")
 flat = true
-text_direction = 1
 script = SubResource("GDScript_6eahc")
 
 [node name="BG" parent="." instance=ExtResource("2_4qkqx")]

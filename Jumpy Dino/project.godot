@@ -25,6 +25,10 @@ Global="*res://global.gd"
 window/size/viewport_width=540
 window/size/viewport_height=960
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/admob/plugin.cfg", "res://addons/coi_serviceworker/plugin.cfg")
+
 [input]
 
 left={

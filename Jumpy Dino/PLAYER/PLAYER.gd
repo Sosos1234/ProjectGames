@@ -42,6 +42,11 @@ func _physics_process(delta):
 		anim2.hide()
 		anim3.hide()
 		anim4.show()
+	if Global.globalSkin == "standartSkin":
+		anim.show()
+		anim2.hide()
+		anim3.hide()
+		anim4.hide()
 		
 	if self.position.y <= Global.posUmb:
 		umb = false

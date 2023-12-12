@@ -1,13 +1,15 @@
-[gd_scene load_steps=42 format=3 uid="uid://c7ibndq0r3dho"]
+[gd_scene load_steps=44 format=3 uid="uid://c7ibndq0r3dho"]
 
 [ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="2_edwh2"]
 [ext_resource type="Texture2D" uid="uid://bqkuy1y5xdade" path="res://Sprites/vf433y.png" id="3_1g6fs"]
 [ext_resource type="Texture2D" uid="uid://byemd7t11q4dw" path="res://Sprites/photo_2023-12-10_17-40-58.jpg" id="3_s2t63"]
 [ext_resource type="Texture2D" uid="uid://bcfmg2374djo4" path="res://Sprites/Спрайт-0003-Sheet.png" id="4_hb664"]
+[ext_resource type="Texture2D" uid="uid://dcyqybc42pqbh" path="res://Sprites/34e-0002.png" id="4_lx34i"]
 [ext_resource type="Script" path="res://Levels/CanvasLayer.gd" id="4_mynwb"]
 [ext_resource type="Texture2D" uid="uid://cvvqsub03j26b" path="res://Sprites/монетка.png" id="4_x4f85"]
 [ext_resource type="Texture2D" uid="uid://be6c2phpwj0m0" path="res://Sprites/динозаврспайдермен.png" id="5_qj50x"]
 [ext_resource type="Texture2D" uid="uid://m31qbdex58kp" path="res://Sprites/динозаврлуффи.png" id="6_762px"]
+[ext_resource type="Texture2D" uid="uid://dpcjit24aa2da" path="res://Sprites/укп-0004.png" id="6_uj8ip"]
 [ext_resource type="Texture2D" uid="uid://ckkl05vnrvcgk" path="res://Sprites/pwq-0003-Sheet.png" id="7_d5eiu"]
 [ext_resource type="AudioStream" uid="uid://dsr2ffpwfom1t" path="res://Sounds/Меню.mp3" id="10_gd5o8"]
 
@@ -25,10 +27,10 @@ script/source = "extends Button
 func _on_mouse_entered():
 	scale.x = 1.05
 	scale.y = 1.05
-	position = Vector2i(self.position.x-5, self.position.y-3)
+	position = Vector2(self.position.x-5, self.position.y-3)
 
 func _on_mouse_exited():
-	position = Vector2i(self.position.x+5, self.position.y+3)
+	position = Vector2(self.position.x+5, self.position.y+3)
 	scale.x = 1
 	scale.y = 1
 "
@@ -53,6 +55,16 @@ script/source = "extends Button
 func _process(delta):
 	if Global.buttonz1 == true:
 		self.queue_free()
+
+func _on_mouse_entered():
+	scale.x = 1.05
+	scale.y = 1.05
+	position = Vector2(self.position.x-3, self.position.y-2)
+
+func _on_mouse_exited():
+	position = Vector2(self.position.x+3, self.position.y+2)
+	scale.x = 1
+	scale.y = 1
 "
 
 [sub_resource type="GDScript" id="GDScript_t6rpb"]
@@ -62,6 +74,16 @@ script/source = "extends Button
 func _process(delta):
 	if Global.buttonz2 == true:
 		self.queue_free()
+
+func _on_mouse_entered():
+	scale.x = 1.05
+	scale.y = 1.05
+	position = Vector2(self.position.x-3, self.position.y-2)
+
+func _on_mouse_exited():
+	position = Vector2(self.position.x+3, self.position.y+2)
+	scale.x = 1
+	scale.y = 1
 "
 
 [sub_resource type="GDScript" id="GDScript_wc0eh"]
@@ -71,38 +93,17 @@ script/source = "extends Button
 func _process(delta):
 	if Global.buttonz3 == true:
 		self.queue_free()
+
+func _on_mouse_entered():
+	scale.x = 1.05
+	scale.y = 1.05
+	position = Vector2(self.position.x-3, self.position.y-2)
+
+func _on_mouse_exited():
+	position = Vector2(self.position.x+3, self.position.y+2)
+	scale.x = 1
+	scale.y = 1
 "
-
-[sub_resource type="GDScript" id="GDScript_5jwr3"]
-script/source = "extends CharacterBody2D
-
-@onready var anim = $AnimatedSprite2D
-@onready var anim2 = $AnimatedSprite2D2
-@onready var anim3 = $AnimatedSprite2D3
-@onready var anim4 = $AnimatedSprite2D4
-
-func _physics_process(delta):
-	if Global.globalSkin == \"spiderSkin\":
-		anim.hide()
-		anim2.show()
-		anim3.hide()
-		anim4.hide()
-	if Global.globalSkin == \"luffiSkin\":
-		anim.hide()
-		anim2.hide()
-		anim3.show()
-		anim4.hide()
-	if Global.globalSkin == \"cjSkin\":
-		anim.hide()
-		anim2.hide()
-		anim3.hide()
-		anim4.show()
-
-"
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aeq0d"]
-radius = 18.0
-height = 94.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_27tct"]
 atlas = ExtResource("4_hb664")
@@ -132,6 +133,41 @@ animations = [{
 "name": &"IDLE",
 "speed": 9.0
 }]
+
+[sub_resource type="GDScript" id="GDScript_5jwr3"]
+script/source = "extends CharacterBody2D
+
+@onready var anim = $AnimatedSprite2D
+@onready var anim2 = $AnimatedSprite2D2
+@onready var anim3 = $AnimatedSprite2D3
+@onready var anim4 = $AnimatedSprite2D4
+
+func _physics_process(delta):
+	if Global.globalSkin == \"spiderSkin\":
+		anim.hide()
+		anim2.show()
+		anim3.hide()
+		anim4.hide()
+	if Global.globalSkin == \"luffiSkin\":
+		anim.hide()
+		anim2.hide()
+		anim3.show()
+		anim4.hide()
+	if Global.globalSkin == \"cjSkin\":
+		anim.hide()
+		anim2.hide()
+		anim3.hide()
+		anim4.show()
+	if Global.globalSkin == \"standartSkin\":
+		anim.show()
+		anim2.hide()
+		anim3.hide()
+		anim4.hide()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aeq0d"]
+radius = 18.0
+height = 94.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jro28"]
 atlas = ExtResource("7_d5eiu")
@@ -294,6 +330,9 @@ position = Vector2(133, 376)
 [node name="Platform2" parent="." instance=ExtResource("2_edwh2")]
 position = Vector2(263, 950)
 
+[node name="Platform5" parent="." instance=ExtResource("2_edwh2")]
+position = Vector2(403, 657)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(270, 479.73)
 
@@ -302,6 +341,7 @@ offset_left = 329.0
 offset_top = 872.0
 offset_right = 537.0
 offset_bottom = 960.0
+action_mode = 0
 icon = ExtResource("3_1g6fs")
 flat = true
 script = SubResource("GDScript_ds34v")
@@ -310,7 +350,7 @@ script = SubResource("GDScript_ds34v")
 script = ExtResource("4_mynwb")
 
 [node name="Money" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(44, 44)
+position = Vector2(47, 45)
 scale = Vector2(0.275, 0.275)
 texture = ExtResource("4_x4f85")
 
@@ -333,13 +373,17 @@ offset_left = 91.0
 offset_top = 386.0
 offset_right = 175.0
 offset_bottom = 417.0
+action_mode = 0
+flat = true
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 91.0
-offset_top = 386.0
-offset_right = 175.0
-offset_bottom = 417.0
-text = "Купить"
+offset_left = 84.0
+offset_top = 360.0
+offset_right = 192.0
+offset_bottom = 468.0
+action_mode = 0
+icon = ExtResource("6_uj8ip")
+flat = true
 script = SubResource("GDScript_gclgj")
 
 [node name="Money2" type="Sprite2D" parent="CanvasLayer"]
@@ -360,13 +404,17 @@ offset_left = 361.0
 offset_top = 386.0
 offset_right = 445.0
 offset_bottom = 417.0
+action_mode = 0
+flat = true
 
 [node name="Button2" type="Button" parent="CanvasLayer"]
-offset_left = 361.0
-offset_top = 386.0
-offset_right = 445.0
-offset_bottom = 417.0
-text = "Купить"
+offset_left = 353.0
+offset_top = 360.0
+offset_right = 461.0
+offset_bottom = 468.0
+action_mode = 0
+icon = ExtResource("6_uj8ip")
+flat = true
 script = SubResource("GDScript_t6rpb")
 
 [node name="Money3" type="Sprite2D" parent="CanvasLayer"]
@@ -388,13 +436,17 @@ offset_left = 91.0
 offset_top = 667.0
 offset_right = 175.0
 offset_bottom = 698.0
+action_mode = 0
+flat = true
 
 [node name="Button3" type="Button" parent="CanvasLayer"]
-offset_left = 91.0
-offset_top = 667.0
-offset_right = 175.0
-offset_bottom = 698.0
-text = "Купить"
+offset_left = 85.0
+offset_top = 641.0
+offset_right = 193.0
+offset_bottom = 749.0
+action_mode = 0
+icon = ExtResource("6_uj8ip")
+flat = true
 script = SubResource("GDScript_wc0eh")
 
 [node name="Money4" type="Sprite2D" parent="CanvasLayer"]
@@ -409,6 +461,42 @@ offset_right = 251.57
 offset_bottom = -122.455
 theme_override_font_sizes/font_size = 200
 text = "1000"
+
+[node name="Button7" type="Button" parent="CanvasLayer"]
+offset_left = 222.0
+offset_top = 479.0
+offset_right = 330.0
+offset_bottom = 587.0
+action_mode = 0
+icon = ExtResource("4_lx34i")
+flat = true
+
+[node name="Money5" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(296, 545)
+scale = Vector2(0.09375, 0.0937496)
+texture = ExtResource("4_x4f85")
+
+[node name="Label" type="Label" parent="CanvasLayer/Money5"]
+offset_left = -608.264
+offset_top = -132.231
+offset_right = -152.264
+offset_bottom = 140.769
+theme_override_font_sizes/font_size = 200
+text = "+300"
+
+[node name="Button8" type="Button" parent="CanvasLayer"]
+offset_left = 360.0
+offset_top = 655.0
+offset_right = 444.0
+offset_bottom = 686.0
+action_mode = 0
+flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(415, 583.938)
+scale = Vector2(0.116314, 0.145877)
+sprite_frames = SubResource("SpriteFrames_q6c87")
+animation = &"IDLE"
 
 [node name="Platform3" parent="." instance=ExtResource("2_edwh2")]
 position = Vector2(403, 376)
@@ -475,8 +563,16 @@ script = SubResource("GDScript_7ty3a")
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Exit" to="MenuMusic" method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button4" to="CanvasLayer" method="_on_button_4_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button5" to="CanvasLayer" method="_on_button_5_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Button2" to="CanvasLayer/Button2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Button2" to="CanvasLayer/Button2" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="CanvasLayer" method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button6" to="CanvasLayer" method="_on_button_6_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Button3" to="CanvasLayer/Button3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Button3" to="CanvasLayer/Button3" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Button3" to="CanvasLayer" method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button7" to="CanvasLayer/Button7" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button8" to="CanvasLayer" method="_on_button_8_pressed"]
