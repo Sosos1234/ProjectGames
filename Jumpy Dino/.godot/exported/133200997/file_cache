@@ -1,6 +1,10 @@
 res://Levels/bg.tscn::21b41ebedc2974b1f0800b8914c3c116::1702241946::res://.godot/exported/133200997/export-5e6f2437faabb87f55408f65096abace-bg.scn
 res://Levels/level.tscn::cf28d62b384744c2144508a30b13646b::1702324533::res://.godot/exported/133200997/export-aa8524b3965874fe19b6f51335dfb48f-level.scn
+<<<<<<< HEAD
 res://Levels/menu.tscn::585cf0cbb4f26885d06377c447fe6f99::1702324614::res://.godot/exported/133200997/export-44c825f2227335c6ee26254551d0c845-menu.scn
+=======
+res://Levels/menu.tscn::585cf0cbb4f26885d06377c447fe6f99::1702324961::res://.godot/exported/133200997/export-44c825f2227335c6ee26254551d0c845-menu.scn
+>>>>>>> viktor3
 res://Levels/shop.tscn::b92f183bc5fa9dfc2d0013b305e76428::1702324533::res://.godot/exported/133200997/export-c386f4de1806fe194ab5ca4d6424a94c-shop.scn
 res://objects/gold.tscn::48c72dd8396c681e77e6d43d74887df4::1702324533::res://.godot/exported/133200997/export-639a3e15ea871e5ec0951b073da0155f-gold.scn
 res://objects/platform.tscn::ae5877cf643677e09381d943a6982ac7::1702324533::res://.godot/exported/133200997/export-ec4b609243bec5305e015680eaee199e-platform.scn

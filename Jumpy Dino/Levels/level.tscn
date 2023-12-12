@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bosjsdsmm6rcc"]
+[gd_scene load_steps=17 format=3 uid="uid://bosjsdsmm6rcc"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_55joy"]
 [ext_resource type="PackedScene" uid="uid://cv2shx37rs0h5" path="res://PLAYER/person.tscn" id="2_ql3l8"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="5_qyija"]
 [ext_resource type="Texture2D" uid="uid://1b47i60surdx" path="res://Sprites/другиесердечки.png" id="6_0dmcu"]
 [ext_resource type="Texture2D" uid="uid://d0w4fup6dd4g1" path="res://Sprites/сердкечки-export.png" id="7_iaapc"]
+[ext_resource type="PackedScene" uid="uid://3wvayg7r3q7h" path="res://objects/umbrella.tscn" id="9_eykpx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndvjs"]
 size = Vector2(608, 20)
@@ -165,6 +166,9 @@ position = Vector2(508, 950)
 
 [node name="Platform6" parent="." instance=ExtResource("5_qyija")]
 position = Vector2(426, 950)
+
+[node name="umbrella" parent="." instance=ExtResource("9_eykpx")]
+position = Vector2(263, 746)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2/Area2D" to="." method="_on_area_2d_2_body_entered"]

@@ -1,20 +1,38 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< HEAD
 ::res://::1702324955
 export_presets.cfg::TextFile::-1::1702324813::0::1::::<><>::
 global.gd::GDScript::-1::1702324533::0::1::::<>Node<>::
 Gold.gd::GDScript::-1::1702324533::0::1::::<>Node2D<>::
 ::res://Levels/::1702324886
+=======
+::res://::1702361114
+export_presets.cfg::TextFile::-1::1702325312::0::1::::<><>::
+global.gd::GDScript::-1::1702324533::0::1::::<>Node<>::
+umbrella.gd::GDScript::-1::1702361114::0::1::::<>Node2D<>::
+::res://Levels/::1702324961
+>>>>>>> viktor3
 Area2D2.gd::GDScript::-1::1702241946::0::1::::<>Area2D<>::
 bg.tscn::PackedScene::5237166873039926563::1702241946::0::1::::<><>::uid://byemd7t11q4dw::::res://Sprites/photo_2023-12-10_17-40-58.jpg
 Exit.gd::GDScript::-1::1702241946::0::1::::<>Button<>::
 level.gd::GDScript::-1::1702324533::0::1::::<>Node2D<>::
 level.tscn::PackedScene::3406802077362845890::1702324533::0::1::::<><>::res://Levels/level.gd<>uid://cv2shx37rs0h5::::res://PLAYER/person.tscn<>uid://cgu6mxp2emtp0::::res://Levels/bg.tscn<>res://Levels/Area2D2.gd<>uid://cvvqsub03j26b::::res://Sprites/монетка.png<>uid://cna66masx2f85::::res://objects/platform.tscn<>uid://1b47i60surdx::::res://Sprites/другиесердечки.png<>uid://d0w4fup6dd4g1::::res://Sprites/сердкечки-export.png
+<<<<<<< HEAD
 menu.tscn::PackedScene::2573586454885333964::1702324886::0::1::::<><>::uid://cna66masx2f85::::res://objects/platform.tscn<>uid://cgu6mxp2emtp0::::res://Levels/bg.tscn<>uid://cv2shx37rs0h5::::res://PLAYER/person.tscn
 Node2D.gd::GDScript::-1::1702241946::0::1::::<>Node2D<>::
 shop.tscn::PackedScene::7035483501595875352::1702324533::0::1::::<><>::uid://cv2shx37rs0h5::::res://PLAYER/person.tscn<>uid://cna66masx2f85::::res://objects/platform.tscn<>uid://byemd7t11q4dw::::res://Sprites/photo_2023-12-10_17-40-58.jpg<>uid://cvvqsub03j26b::::res://Sprites/монетка.png
 ::res://objects/::1702324533
 AnimatableBody2D.gd::GDScript::-1::1702324533::0::1::::<>AnimatableBody2D<>::
 gold.tscn::PackedScene::8596617428887677347::1702324533::0::1::::<><>::res://Gold.gd<>uid://cvvqsub03j26b::::res://Sprites/монетка.png
+=======
+menu.tscn::PackedScene::2573586454885333964::1702324961::0::1::::<><>::uid://cna66masx2f85::::res://objects/platform.tscn<>uid://cgu6mxp2emtp0::::res://Levels/bg.tscn<>uid://cv2shx37rs0h5::::res://PLAYER/person.tscn
+Node2D.gd::GDScript::-1::1702241946::0::1::::<>Node2D<>::
+shop.tscn::PackedScene::7035483501595875352::1702324533::0::1::::<><>::uid://cv2shx37rs0h5::::res://PLAYER/person.tscn<>uid://cna66masx2f85::::res://objects/platform.tscn<>uid://byemd7t11q4dw::::res://Sprites/photo_2023-12-10_17-40-58.jpg<>uid://cvvqsub03j26b::::res://Sprites/монетка.png
+::res://objects/::1702361114
+AnimatableBody2D.gd::GDScript::-1::1702324533::0::1::::<>AnimatableBody2D<>::
+Gold.gd::GDScript::-1::1702324533::0::1::::<>Node2D<>::
+gold.tscn::PackedScene::8596617428887677347::1702361114::0::1::::<><>::res://objects/Gold.gd<>uid://cvvqsub03j26b::::res://Sprites/монетка.png
+>>>>>>> viktor3
 platform.gd::GDScript::-1::1702302867::0::1::::<>Node2D<>::
 platform.tscn::PackedScene::5687234552197278492::1702324533::0::1::::<><>::res://objects/platform.gd<>uid://by5e62r40ucar::::res://Sprites/Free/Traps/Spike Head/Idle.png
 pterodactyl.gd::GDScript::-1::1702302867::0::1::::<>Path2D<>::
@@ -28,7 +46,12 @@ PLAYER.gd::GDScript::-1::1702324533::0::1::::<>CharacterBody2D<>::
 ::res://Signals/::1702324533
 node.tscn::PackedScene::948047596960568742::1702241946::0::1::::<><>::res://Signals/Signals.gd
 Signals.gd::GDScript::-1::1702324533::0::1::::<>Node<>::
+<<<<<<< HEAD
 ::res://Sprites/::1702324533
+=======
+::res://Sprites/::1702325280
+Gf.jpg::CompressedTexture2D::2771283367214823330::1702325091::1702325280::1::::<><>::
+>>>>>>> viktor3
 photo_2023-12-10_17-40-58.jpg::CompressedTexture2D::4079946114632246416::1702241946::1702241976::1::::<><>::
 другиесердечки.png::CompressedTexture2D::1828792719774569441::1702324533::1702324533::1::::<><>::
 монетка.png::CompressedTexture2D::6291163685980185331::1702324533::1702324533::1::::<><>::
