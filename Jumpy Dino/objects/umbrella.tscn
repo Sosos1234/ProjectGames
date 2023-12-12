@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://3wvayg7r3q7h"]
+
+[ext_resource type="Script" path="res://objects/umbrella.gd" id="1_r0flj"]
+[ext_resource type="Texture2D" uid="uid://bfqovq10qcg4a" path="res://Sprites/Gf.jpg" id="2_rr5ur"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kaj1g"]
+radius = 16.0
+
+[node name="umbrella" type="Node2D"]
+script = ExtResource("1_r0flj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0195312, 0.0195312)
+texture = ExtResource("2_rr5ur")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kaj1g")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

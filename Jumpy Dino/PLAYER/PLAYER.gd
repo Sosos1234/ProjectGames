@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var umb: bool = false
 var lives: int = 3
 var MaxScore: int = 0
 var score: int 
@@ -15,10 +16,19 @@ func _ready():
 	Signals.connect("onPteradactyl", on_pteradactyl)
 	Signals.connect("NonOnPteradactyl", non_on_pteradactyl)
 	Signals.connect("MinusLive", minus_lives)
+	Signals.connect("PutUpUmbrella", umbrella)
 
 func _physics_process(delta):
-	if not is_on_floor():
-		velocity.y += gravity * delta 
+	if self.position.y <= Global.posUmb:
+		umb = false 
+	if not is_on_floor() && umb == false:
+		set_collision_layer_value(1, 1)
+		set_collision_mask_value(1, 1)
+		velocity.y += gravity * delta
+	if umb == true:
+		set_collision_layer_value(1, 0)
+		set_collision_mask_value(1, 0)
+		velocity.y = JUMP_VELOCITY
 	
 	if is_on_floor():
 		anim.play("IDLE")
@@ -38,6 +48,10 @@ func _physics_process(delta):
 	points(self.position.y)
 
 	move_and_slide()
+
+func umbrella():
+	if self.position.y >= Global.posUmb:
+		umb = true
 
 func minus_lives():
 	lives -= 1

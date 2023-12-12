@@ -2,6 +2,7 @@ extends Node2D
 
 
 var HaveBeenPterodactyl = false
+var have: bool = false
 var YPos = 150
 var posMaxYForGeneration = 100
 var posMinYForGeneration = 700
@@ -16,11 +17,12 @@ var level_templates = [
 	[200, 500, 400, 90, 300, 140],
 	[60, 200, 400, 100, 320, 250]
 ]
-var current_level = 16
+var current_level = 10
 var platform_scene = preload("res://objects/platform.tscn")
 var pterodactyl_scene = preload("res://objects/pterodactyl.tscn")
 var shishulya_scene = preload("res://objects/rigid_body_2d.tscn")
 var coin_scene = preload("res://objects/gold.tscn")
+var umbrella_scene = preload("res://objects/umbrella.tscn")
 
 func _ready():
 	Signals.emit_signal("GameStarted")
@@ -32,25 +34,32 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 	for x in level_templates[current_level % level_templates.size()]:
 		var platform = platform_scene.instantiate()
 		var coin = coin_scene.instantiate()
+		var umbrella = umbrella_scene.instantiate()
 		platform.position.x = x
 		platform.position.y = randf_range(posAveYForGeneration, posAveYForGeneration - 100)
 		posPlatform = platform.position.y
 		if randi_range(1, 5) == 5:
 			coin.position.x = platform.position.x
 			coin.position.y = platform.position.y - 30
+			have = true
 			add_child(coin)
+		if randi_range(1, 40) == 40 && have == false:
+			umbrella.position.x = platform.position.x
+			umbrella.position.y = platform.position.y - 30
+			add_child(umbrella)
 		add_child(platform)
+		have = false
 		posAveYForGeneration -= YPos
 		if maxPosPlatform > posPlatform:
 			maxPosPlatform = posPlatform
 		
 		
 	
-	if current_level > 5 && current_level < 40:
+	if current_level >= 10 && current_level <= 40:
 		for x in 1:
 			var posYPlayer = int(positionYPlayer)
 			var shishulya = shishulya_scene.instantiate()
-			shishulya.position.x = randi_range(20, 520)
+			shishulya.position.x = randi_range(15, 525)
 			shishulya.position.y = randi_range(posYPlayer - 700, posYPlayer - 1000)
 			add_child(shishulya)
 	
@@ -58,7 +67,7 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 		for x in 2:
 			var posYPlayer = int(positionYPlayer)
 			var shishulya = shishulya_scene.instantiate()
-			shishulya.position.x = randi_range(20, 520)
+			shishulya.position.x = randi_range(15, 525)
 			shishulya.position.y = randi_range(posYPlayer - 700, posYPlayer - 1000)
 			add_child(shishulya)
 	
@@ -74,7 +83,10 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 		YPos += 50
 		for i in range(level_templates.size()):
 			level_templates[i].remove_at(level_templates[i].size() - 1)
-
+	
+	if current_level <= 100 && current_level >= 10:
+		Signals.emit_signal("SpeedShishuly", 0.005)
+	
 func _process(_delta):
 	var cam = get_node("Player/Camera2D")
 	%WallOfDeath.position.y = cam.limit_bottom + 100
