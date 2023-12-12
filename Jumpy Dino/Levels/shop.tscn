@@ -1,15 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7ibndq0r3dho"]
+[gd_scene load_steps=42 format=3 uid="uid://c7ibndq0r3dho"]
 
-[ext_resource type="PackedScene" uid="uid://cv2shx37rs0h5" path="res://PLAYER/person.tscn" id="2_8xyev"]
 [ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="2_edwh2"]
+[ext_resource type="Texture2D" uid="uid://bqkuy1y5xdade" path="res://Sprites/vf433y.png" id="3_1g6fs"]
 [ext_resource type="Texture2D" uid="uid://byemd7t11q4dw" path="res://Sprites/photo_2023-12-10_17-40-58.jpg" id="3_s2t63"]
+[ext_resource type="Texture2D" uid="uid://bcfmg2374djo4" path="res://Sprites/Спрайт-0003-Sheet.png" id="4_hb664"]
+[ext_resource type="Script" path="res://Levels/CanvasLayer.gd" id="4_mynwb"]
 [ext_resource type="Texture2D" uid="uid://cvvqsub03j26b" path="res://Sprites/монетка.png" id="4_x4f85"]
+[ext_resource type="Texture2D" uid="uid://be6c2phpwj0m0" path="res://Sprites/динозаврспайдермен.png" id="5_qj50x"]
+[ext_resource type="Texture2D" uid="uid://m31qbdex58kp" path="res://Sprites/динозаврлуффи.png" id="6_762px"]
+[ext_resource type="Texture2D" uid="uid://ckkl05vnrvcgk" path="res://Sprites/pwq-0003-Sheet.png" id="7_d5eiu"]
+[ext_resource type="AudioStream" uid="uid://dsr2ffpwfom1t" path="res://Sounds/Меню.mp3" id="10_gd5o8"]
 
 [sub_resource type="GDScript" id="GDScript_mpi8k"]
 script/source = "extends Node2D
 
 func _on_exit_pressed():
 	get_tree().change_scene_to_file(\"res://Levels/menu.tscn\")
+	
+"
+
+[sub_resource type="GDScript" id="GDScript_ds34v"]
+script/source = "extends Button
+
+func _on_mouse_entered():
+	scale.x = 1.05
+	scale.y = 1.05
+	position = Vector2i(self.position.x-5, self.position.y-3)
+
+func _on_mouse_exited():
+	position = Vector2i(self.position.x+5, self.position.y+3)
+	scale.x = 1
+	scale.y = 1
 "
 
 [sub_resource type="GDScript" id="GDScript_moib3"]
@@ -25,6 +46,237 @@ func _process(_delta):
 
 "
 
+[sub_resource type="GDScript" id="GDScript_gclgj"]
+resource_name = "Button1"
+script/source = "extends Button
+
+func _process(delta):
+	if Global.buttonz1 == true:
+		self.queue_free()
+"
+
+[sub_resource type="GDScript" id="GDScript_t6rpb"]
+resource_name = "Button2"
+script/source = "extends Button
+
+func _process(delta):
+	if Global.buttonz2 == true:
+		self.queue_free()
+"
+
+[sub_resource type="GDScript" id="GDScript_wc0eh"]
+resource_name = "Button3"
+script/source = "extends Button
+
+func _process(delta):
+	if Global.buttonz3 == true:
+		self.queue_free()
+"
+
+[sub_resource type="GDScript" id="GDScript_5jwr3"]
+script/source = "extends CharacterBody2D
+
+@onready var anim = $AnimatedSprite2D
+@onready var anim2 = $AnimatedSprite2D2
+@onready var anim3 = $AnimatedSprite2D3
+@onready var anim4 = $AnimatedSprite2D4
+
+func _physics_process(delta):
+	if Global.globalSkin == \"spiderSkin\":
+		anim.hide()
+		anim2.show()
+		anim3.hide()
+		anim4.hide()
+	if Global.globalSkin == \"luffiSkin\":
+		anim.hide()
+		anim2.hide()
+		anim3.show()
+		anim4.hide()
+	if Global.globalSkin == \"cjSkin\":
+		anim.hide()
+		anim2.hide()
+		anim3.hide()
+		anim4.show()
+
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aeq0d"]
+radius = 18.0
+height = 94.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27tct"]
+atlas = ExtResource("4_hb664")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3vyj"]
+atlas = ExtResource("4_hb664")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waeox"]
+atlas = ExtResource("4_hb664")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6c87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27tct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3vyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waeox")
+}],
+"loop": false,
+"name": &"IDLE",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jro28"]
+atlas = ExtResource("7_d5eiu")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b38rm"]
+atlas = ExtResource("7_d5eiu")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0bw7"]
+atlas = ExtResource("7_d5eiu")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8b06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jro28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b38rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0bw7")
+}],
+"loop": false,
+"name": &"IDLE",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dodb"]
+atlas = ExtResource("5_qj50x")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7cxq"]
+atlas = ExtResource("5_qj50x")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84mq7"]
+atlas = ExtResource("5_qj50x")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_252cp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dodb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7cxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84mq7")
+}],
+"loop": false,
+"name": &"IDLE",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usfuy"]
+atlas = ExtResource("6_762px")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0u0v"]
+atlas = ExtResource("6_762px")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5wxe"]
+atlas = ExtResource("6_762px")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mn7mr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usfuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0u0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5wxe")
+}],
+"loop": false,
+"name": &"IDLE",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwmi5"]
+atlas = ExtResource("7_d5eiu")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gx1id"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwmi5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6cvi"]
+atlas = ExtResource("5_qj50x")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gv2te"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6cvi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7beif"]
+atlas = ExtResource("6_762px")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c231t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7beif")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_7ty3a"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	play(Global.menuMusic + 0.017)
+
+func _on_exit_pressed():
+	Global.menuMusic = get_playback_position()
+"
+
 [node name="shop" type="Node2D"]
 script = SubResource("GDScript_mpi8k")
 
@@ -33,11 +285,11 @@ position = Vector2(270, 479.611)
 scale = Vector2(0.75, 0.750607)
 texture = ExtResource("3_s2t63")
 
+[node name="Platform4" parent="." instance=ExtResource("2_edwh2")]
+position = Vector2(133, 657)
+
 [node name="Platform" parent="." instance=ExtResource("2_edwh2")]
 position = Vector2(133, 376)
-
-[node name="Platform" parent="Platform" instance=ExtResource("2_edwh2")]
-position = Vector2(270, 0)
 
 [node name="Platform2" parent="." instance=ExtResource("2_edwh2")]
 position = Vector2(263, 950)
@@ -46,17 +298,16 @@ position = Vector2(263, 950)
 position = Vector2(270, 479.73)
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 461.0
-offset_top = 908.0
-offset_right = 540.0
-offset_bottom = 939.0
-text = "Выход"
-
-[node name="Player" parent="." instance=ExtResource("2_8xyev")]
-position = Vector2(262, 894)
-script = null
+offset_left = 329.0
+offset_top = 872.0
+offset_right = 537.0
+offset_bottom = 960.0
+icon = ExtResource("3_1g6fs")
+flat = true
+script = SubResource("GDScript_ds34v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_mynwb")
 
 [node name="Money" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(44, 44)
@@ -77,4 +328,155 @@ visible_characters_behavior = 3
 text_direction = 1
 script = SubResource("GDScript_moib3")
 
+[node name="Button4" type="Button" parent="CanvasLayer"]
+offset_left = 91.0
+offset_top = 386.0
+offset_right = 175.0
+offset_bottom = 417.0
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 91.0
+offset_top = 386.0
+offset_right = 175.0
+offset_bottom = 417.0
+text = "Купить"
+script = SubResource("GDScript_gclgj")
+
+[node name="Money2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(103, 430)
+scale = Vector2(0.075625, 0.075625)
+texture = ExtResource("4_x4f85")
+
+[node name="Label" type="Label" parent="CanvasLayer/Money2"]
+offset_left = 211.57
+offset_top = -145.455
+offset_right = 251.57
+offset_bottom = -122.455
+theme_override_font_sizes/font_size = 200
+text = "250"
+
+[node name="Button5" type="Button" parent="CanvasLayer"]
+offset_left = 361.0
+offset_top = 386.0
+offset_right = 445.0
+offset_bottom = 417.0
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 361.0
+offset_top = 386.0
+offset_right = 445.0
+offset_bottom = 417.0
+text = "Купить"
+script = SubResource("GDScript_t6rpb")
+
+[node name="Money3" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(374, 431)
+scale = Vector2(0.075625, 0.075625)
+texture = ExtResource("4_x4f85")
+
+[node name="Label" type="Label" parent="CanvasLayer/Money3"]
+offset_left = 211.57
+offset_top = -145.455
+offset_right = 251.57
+offset_bottom = -122.455
+theme_override_font_sizes/font_size = 200
+text = "500
+"
+
+[node name="Button6" type="Button" parent="CanvasLayer"]
+offset_left = 91.0
+offset_top = 667.0
+offset_right = 175.0
+offset_bottom = 698.0
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+offset_left = 91.0
+offset_top = 667.0
+offset_right = 175.0
+offset_bottom = 698.0
+text = "Купить"
+script = SubResource("GDScript_wc0eh")
+
+[node name="Money4" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(104, 711)
+scale = Vector2(0.075625, 0.075625)
+texture = ExtResource("4_x4f85")
+
+[node name="Label" type="Label" parent="CanvasLayer/Money4"]
+offset_left = 211.57
+offset_top = -145.455
+offset_right = 251.57
+offset_bottom = -122.455
+theme_override_font_sizes/font_size = 200
+text = "1000"
+
+[node name="Platform3" parent="." instance=ExtResource("2_edwh2")]
+position = Vector2(403, 376)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(268, 891)
+collision_layer = 3
+collision_mask = 3
+script = SubResource("GDScript_5jwr3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_aeq0d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(-6, -4)
+scale = Vector2(0.09, 0.11)
+sprite_frames = SubResource("SpriteFrames_q6c87")
+animation = &"IDLE"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Player"]
+visible = false
+position = Vector2(-6, -4)
+scale = Vector2(0.09, 0.11)
+sprite_frames = SubResource("SpriteFrames_u8b06")
+animation = &"IDLE"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Player"]
+visible = false
+position = Vector2(-6, -4)
+scale = Vector2(0.09, 0.11)
+sprite_frames = SubResource("SpriteFrames_252cp")
+animation = &"IDLE"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Player"]
+visible = false
+position = Vector2(-6, -4)
+scale = Vector2(0.09, 0.11)
+sprite_frames = SubResource("SpriteFrames_mn7mr")
+animation = &"IDLE"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(146, 303)
+scale = Vector2(0.142, 0.142)
+sprite_frames = SubResource("SpriteFrames_gx1id")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(417, 302)
+scale = Vector2(0.142, 0.142)
+sprite_frames = SubResource("SpriteFrames_gv2te")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(146, 583)
+scale = Vector2(0.142, 0.142)
+sprite_frames = SubResource("SpriteFrames_c231t")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_gd5o8")
+volume_db = -20.0
+script = SubResource("GDScript_7ty3a")
+
+[connection signal="mouse_entered" from="Exit" to="Exit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Exit" to="Exit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Exit" to="MenuMusic" method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button4" to="CanvasLayer" method="_on_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button5" to="CanvasLayer" method="_on_button_5_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="CanvasLayer" method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button6" to="CanvasLayer" method="_on_button_6_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button3" to="CanvasLayer" method="_on_button_3_pressed"]

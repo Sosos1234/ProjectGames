@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var HaveBeenPterodactyl = false
 var have: bool = false
 var YPos = 150
@@ -11,13 +10,14 @@ var maxPosPlatform = 0
 var posPlatform = 0
 var posCoin = 0
 var level_templates = [
-	[150, 200, 40, 400, 320, 500],
-	[480, 150, 500, 420, 40, 300],
-	[40, 200, 280, 520, 460, 150],
-	[200, 500, 400, 90, 300, 140],
-	[60, 200, 400, 100, 320, 250]
+	[150, 200, 40, 400, 275, 503],
+	[460, 148, 503, 420, 40, 290],
+	[40, 200, 280, 515, 440, 150],
+	[200, 503, 400, 90, 280, 140],
+	[60, 200, 400, 100, 350, 273]
 ]
-var current_level = 10
+var current_level = 0
+var max_current_level = 0
 var platform_scene = preload("res://objects/platform.tscn")
 var pterodactyl_scene = preload("res://objects/pterodactyl.tscn")
 var shishulya_scene = preload("res://objects/rigid_body_2d.tscn")
@@ -47,7 +47,7 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 			umbrella.position.x = platform.position.x
 			umbrella.position.y = platform.position.y - 30
 			add_child(umbrella)
-		add_child(platform)
+		$Objects.add_child(platform)
 		have = false
 		posAveYForGeneration -= YPos
 		if maxPosPlatform > posPlatform:
@@ -84,9 +84,10 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 		for i in range(level_templates.size()):
 			level_templates[i].remove_at(level_templates[i].size() - 1)
 	
-	if current_level <= 100 && current_level >= 10:
-		Signals.emit_signal("SpeedShishuly", 0.005)
-	
+	if max_current_level < current_level && current_level <= 100 && current_level >= 10:
+		max_current_level = current_level
+		Signals.emit_signal("SpeedShishuly", current_level)
+		
 func _process(_delta):
 	var cam = get_node("Player/Camera2D")
 	%WallOfDeath.position.y = cam.limit_bottom + 100

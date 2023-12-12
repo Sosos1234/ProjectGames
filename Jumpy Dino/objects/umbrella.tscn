@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://3wvayg7r3q7h"]
 
 [ext_resource type="Script" path="res://objects/umbrella.gd" id="1_r0flj"]
-[ext_resource type="Texture2D" uid="uid://bfqovq10qcg4a" path="res://Sprites/Gf.jpg" id="2_rr5ur"]
+[ext_resource type="Texture2D" uid="uid://doa72x4t7cve0" path="res://Sprites/зонтик.png" id="2_afswt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kaj1g"]
 radius = 16.0
@@ -10,8 +10,9 @@ radius = 16.0
 script = ExtResource("1_r0flj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0195312, 0.0195312)
-texture = ExtResource("2_rr5ur")
+position = Vector2(0, -2)
+scale = Vector2(0.13125, 0.13125)
+texture = ExtResource("2_afswt")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

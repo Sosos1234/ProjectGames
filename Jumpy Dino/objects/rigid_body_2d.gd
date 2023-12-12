@@ -6,13 +6,12 @@ func _ready():
 	Signals.connect("SpeedShishuly", speed_shishuly)
 
 func _process(delta):
-	print(speed)
 	set_gravity_scale(speed)
-	if linear_velocity.y == 0 && (self.position.y - 200) > $"../Player".position.y :
+	if self.position.y-1500 > $"../Player".position.y :
 		queue_free()
 
 func speed_shishuly(value):
-	speed += value
+	speed = value * 0.005
 
 func _on_area_2d_2_body_exited(body):
 	if body.name == "Player":
