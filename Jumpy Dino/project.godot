@@ -24,10 +24,12 @@ Global="*res://global.gd"
 
 window/size/viewport_width=540
 window/size/viewport_height=960
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/admob/plugin.cfg", "res://addons/coi_serviceworker/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
@@ -51,4 +53,3 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"

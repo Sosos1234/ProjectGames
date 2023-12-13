@@ -14,8 +14,8 @@
 [sub_resource type="GDScript" id="GDScript_0hdxw"]
 script/source = "extends Button
 
-
 func _on_pressed():
+	Signals.emit_signal(\"PlayButtonSound\")
 	get_tree().quit()
 
 func _on_mouse_entered():
@@ -34,6 +34,7 @@ resource_name = "shop"
 script/source = "extends Button
 
 func _on_pressed():
+	Signals.emit_signal(\"PlayButtonSound\")
 	get_tree().change_scene_to_file(\"res://Levels/shop.tscn\")
 
 func _on_mouse_entered():
@@ -56,6 +57,7 @@ func _ready():
 	scale.y = 1
 	
 func _on_pressed():
+	Signals.emit_signal(\"PlayButtonSound\")
 	get_tree().change_scene_to_file(\"res://Levels/level.tscn\")
 
 func _on_mouse_entered():

@@ -1,14 +1,11 @@
-res://Levels/bg.tscn::21b41ebedc2974b1f0800b8914c3c116::1702241946::res://.godot/exported/133200997/export-5e6f2437faabb87f55408f65096abace-bg.scn
-res://Levels/level.tscn::cf28d62b384744c2144508a30b13646b::1702324533::res://.godot/exported/133200997/export-aa8524b3965874fe19b6f51335dfb48f-level.scn
-<<<<<<< HEAD
-res://Levels/menu.tscn::585cf0cbb4f26885d06377c447fe6f99::1702324614::res://.godot/exported/133200997/export-44c825f2227335c6ee26254551d0c845-menu.scn
-=======
-res://Levels/menu.tscn::585cf0cbb4f26885d06377c447fe6f99::1702324961::res://.godot/exported/133200997/export-44c825f2227335c6ee26254551d0c845-menu.scn
->>>>>>> viktor3
-res://Levels/shop.tscn::b92f183bc5fa9dfc2d0013b305e76428::1702324533::res://.godot/exported/133200997/export-c386f4de1806fe194ab5ca4d6424a94c-shop.scn
-res://objects/gold.tscn::48c72dd8396c681e77e6d43d74887df4::1702324533::res://.godot/exported/133200997/export-639a3e15ea871e5ec0951b073da0155f-gold.scn
-res://objects/platform.tscn::ae5877cf643677e09381d943a6982ac7::1702324533::res://.godot/exported/133200997/export-ec4b609243bec5305e015680eaee199e-platform.scn
+res://Levels/bg.tscn::bc9170e04fea737d6d7eec4397c82928::1702390155::res://.godot/exported/133200997/export-5e6f2437faabb87f55408f65096abace-bg.scn
+res://Levels/level.tscn::0ff21343443482b419e69da293a8f0cb::1702409002::res://.godot/exported/133200997/export-aa8524b3965874fe19b6f51335dfb48f-level.scn
+res://Levels/menu.tscn::659effb5b3d4a9410d868fd0377be28f::1702409836::res://.godot/exported/133200997/export-44c825f2227335c6ee26254551d0c845-menu.scn
+res://Levels/shop.tscn::c3e0be96b25ddf19557081b83dc526ba::1702409111::res://.godot/exported/133200997/export-c386f4de1806fe194ab5ca4d6424a94c-shop.scn
+res://objects/gold.tscn::486a5773e4e3d06325b3d02384e006ad::1702392683::res://.godot/exported/133200997/export-639a3e15ea871e5ec0951b073da0155f-gold.scn
+res://objects/platform.tscn::7180a042ac651e98742a634be9dfaa0d::1702392683::res://.godot/exported/133200997/export-ec4b609243bec5305e015680eaee199e-platform.scn
 res://objects/pterodactyl.tscn::5f3cf855ff0ffd89df87017c4c793462::1702324533::res://.godot/exported/133200997/export-30948e0ec52ba5024aca7c018313af11-pterodactyl.scn
-res://objects/rigid_body_2d.tscn::2627a50c4a4472b77a0204bd87dacc32::1702324533::res://.godot/exported/133200997/export-1e527545ea797bb2a8fd1c4ff4f99ae3-rigid_body_2d.scn
-res://PLAYER/person.tscn::1921fba4db46dd3deeef8fdbbcbcd1b6::1702324533::res://.godot/exported/133200997/export-948f9592dfeb7c095dbd0e637006f1fb-person.scn
+res://objects/rigid_body_2d.tscn::fc6c52d4e8e92827dfba17f12a07a36b::1702390154::res://.godot/exported/133200997/export-1e527545ea797bb2a8fd1c4ff4f99ae3-rigid_body_2d.scn
+res://PLAYER/person.tscn::174f3d751b685c1ff097ce93d9a19c1c::1702392778::res://.godot/exported/133200997/export-948f9592dfeb7c095dbd0e637006f1fb-person.scn
 res://Signals/node.tscn::d012aca49a5a807803ec847f45cfdd68::1702241946::res://.godot/exported/133200997/export-7573be1c30d83238567a6af1bc590901-node.scn
+res://objects/umbrella.tscn::5a2ffcf7cfb0fce0193bf73fc6f9747e::1702409002::res://.godot/exported/133200997/export-983033f06894f91c5e0ccdaa9cca447f-umbrella.scn

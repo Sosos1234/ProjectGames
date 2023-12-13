@@ -1,8 +1,5 @@
-res://Levels/shop.tscn
 res://Levels/level.tscn
 res://objects/umbrella.tscn
+res://Levels/shop.tscn
 res://Levels/menu.tscn
-res://Levels/Button7.gd
-res://global.gd
 res://Levels/CanvasLayer.gd
-res://PLAYER/PLAYER.gd

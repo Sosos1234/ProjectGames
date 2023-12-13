@@ -1,28 +1,21 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702398497
-export_presets.cfg::TextFile::-1::1702365862::0::1::::<><>::
+::res://::1702409947
+export_presets.cfg::TextFile::-1::1702409793::0::1::::<><>::
 global.gd::GDScript::-1::1702398497::0::1::::<>Node<>::
-::res://addons/::1702398826
-235.png::CompressedTexture2D::3427189775769575798::1702398826::1702398826::1::::<><>::
-234005.png::CompressedTexture2D::8437181530228199632::1702398822::1702398822::1::::<><>::
-::res://addons/coi_serviceworker/::1702398378
-coi_export_plugin.gd::GDScript::-1::1702398378::0::1::::<>EditorExportPlugin<>::
-coi_plugin.gd::GDScript::-1::1702398378::0::1::::<>EditorPlugin<>::
-plugin.cfg::TextFile::-1::1702398378::0::1::::<><>::
-::res://Levels/::1702398498
+::res://Levels/::1702409836
 Area2D2.gd::GDScript::-1::1702241946::0::1::::<>Area2D<>::
 bg.tscn::PackedScene::5237166873039926563::1702390155::0::1::::<><>::uid://byemd7t11q4dw::::res://Sprites/photo_2023-12-10_17-40-58.jpg
-CanvasLayer.gd::GDScript::-1::1702386912::0::1::::<>CanvasLayer<>::
+Button7.gd::GDScript::-1::1702398497::0::1::::<>Button<>::
+CanvasLayer.gd::GDScript::-1::1702409733::0::1::::<>CanvasLayer<>::
 Exit.gd::GDScript::-1::1702241946::0::1::::<>Button<>::
 level.gd::GDScript::-1::1702392207::0::1::::<>Node2D<>::
-level.tscn::PackedScene::3406802077362845890::1702398498::0::1::::<><>::res://Levels/level.gd<>res://PLAYER/PLAYER.gd<>uid://bcfmg2374djo4::::res://Sprites/Спрайт-0003-Sheet.png<>uid://be6c2phpwj0m0::::res://Sprites/динозаврспайдермен.png<>uid://cgu6mxp2emtp0::::res://Levels/bg.tscn<>res://Levels/Area2D2.gd<>uid://cvvqsub03j26b::::res://Sprites/монетка.png<>uid://m31qbdex58kp::::res://Sprites/динозаврлуффи.png<>uid://cna66masx2f85::::res://objects/platform.tscn<>uid://1b47i60surdx::::res://Sprites/другиесердечки.png<>uid://ckkl05vnrvcgk::::res://Sprites/pwq-0003-Sheet.png<>uid://d0w4fup6dd4g1::::res://Sprites/сердкечки-export.png<>uid://pbakv7hqif14::::res://Sounds/Игра.mp3<>uid://q36fybssf8j3::::res://Sounds/Прыжок.mp3<>res://PLAYER/CameraPlayer.gd
-menu.tscn::PackedScene::2573586454885333964::1702398498::0::1::::<><>::uid://cna66masx2f85::::res://objects/platform.tscn<>uid://dw0ch2vukjo44::::res://Sprites/vfufpby.png<>uid://cgu6mxp2emtp0::::res://Levels/bg.tscn<>uid://bqkuy1y5xdade::::res://Sprites/vf433y.png<>uid://c5i045fqqto2x::::res://Sprites/play.png<>uid://bcfmg2374djo4::::res://Sprites/Спрайт-0003-Sheet.png<>uid://be6c2phpwj0m0::::res://Sprites/динозаврспайдермен.png<>uid://m31qbdex58kp::::res://Sprites/динозаврлуффи.png<>uid://ckkl05vnrvcgk::::res://Sprites/pwq-0003-Sheet.png<>uid://dsr2ffpwfom1t::::res://Sounds/Меню.mp3
+level.tscn::PackedScene::3406802077362845890::1702409002::0::1::::<><>::res://Levels/level.gd<>res://PLAYER/PLAYER.gd<>uid://bcfmg2374djo4::::res://Sprites/Спрайт-0003-Sheet.png<>uid://be6c2phpwj0m0::::res://Sprites/динозаврспайдермен.png<>uid://cgu6mxp2emtp0::::res://Levels/bg.tscn<>res://Levels/Area2D2.gd<>uid://cvvqsub03j26b::::res://Sprites/монетка.png<>uid://m31qbdex58kp::::res://Sprites/динозаврлуффи.png<>uid://cna66masx2f85::::res://objects/platform.tscn<>uid://1b47i60surdx::::res://Sprites/другиесердечки.png<>uid://ckkl05vnrvcgk::::res://Sprites/pwq-0003-Sheet.png<>uid://d0w4fup6dd4g1::::res://Sprites/сердкечки-export.png<>uid://pbakv7hqif14::::res://Sounds/Игра.mp3<>uid://q36fybssf8j3::::res://Sounds/Прыжок.mp3<>res://PLAYER/CameraPlayer.gd
+menu.tscn::PackedScene::2573586454885333964::1702409836::0::1::::<><>::uid://cna66masx2f85::::res://objects/platform.tscn<>uid://dw0ch2vukjo44::::res://Sprites/vfufpby.png<>uid://cgu6mxp2emtp0::::res://Levels/bg.tscn<>uid://bqkuy1y5xdade::::res://Sprites/vf433y.png<>uid://c5i045fqqto2x::::res://Sprites/play.png<>uid://bcfmg2374djo4::::res://Sprites/Спрайт-0003-Sheet.png<>uid://be6c2phpwj0m0::::res://Sprites/динозаврспайдермен.png<>uid://m31qbdex58kp::::res://Sprites/динозаврлуффи.png<>uid://ckkl05vnrvcgk::::res://Sprites/pwq-0003-Sheet.png<>uid://dsr2ffpwfom1t::::res://Sounds/Меню.mp3
 Node2D.gd::GDScript::-1::1702241946::0::1::::<>Node2D<>::
-Button7.gd::GDScript::-1::1702398497::0::1::::<>Button<>::
-shop.tscn::PackedScene::7035483501595875352::1702398498::0::1::::<><>::uid://cna66masx2f85::::res://objects/platform.tscn<>uid://bqkuy1y5xdade::::res://Sprites/vf433y.png<>uid://byemd7t11q4dw::::res://Sprites/photo_2023-12-10_17-40-58.jpg<>uid://bcfmg2374djo4::::res://Sprites/Спрайт-0003-Sheet.png<>uid://dcyqybc42pqbh::::res://Sprites/34e-0002.png<>res://Levels/CanvasLayer.gd<>uid://cvvqsub03j26b::::res://Sprites/монетка.png<>uid://be6c2phpwj0m0::::res://Sprites/динозаврспайдермен.png<>uid://m31qbdex58kp::::res://Sprites/динозаврлуффи.png<>uid://dpcjit24aa2da::::res://Sprites/укп-0004.png<>uid://ckkl05vnrvcgk::::res://Sprites/pwq-0003-Sheet.png<>uid://dsr2ffpwfom1t::::res://Sounds/Меню.mp3
-::res://objects/::1702398498
+shop.tscn::PackedScene::7035483501595875352::1702409111::0::1::::<><>::uid://cna66masx2f85::::res://objects/platform.tscn<>uid://bqkuy1y5xdade::::res://Sprites/vf433y.png<>uid://byemd7t11q4dw::::res://Sprites/photo_2023-12-10_17-40-58.jpg<>uid://bcfmg2374djo4::::res://Sprites/Спрайт-0003-Sheet.png<>res://Levels/CanvasLayer.gd<>uid://cvvqsub03j26b::::res://Sprites/монетка.png<>uid://be6c2phpwj0m0::::res://Sprites/динозаврспайдермен.png<>uid://m31qbdex58kp::::res://Sprites/динозаврлуффи.png<>uid://dpcjit24aa2da::::res://Sprites/укп-0004.png<>uid://ckkl05vnrvcgk::::res://Sprites/pwq-0003-Sheet.png<>uid://dsr2ffpwfom1t::::res://Sounds/Меню.mp3<>uid://bwsm2hldjgypp::::res://Sounds/Нажатие на кнопку.mp3<>uid://bqew25xko8rql::::res://Sounds/Звук покупки.mp3
+::res://objects/::1702409003
 AnimatableBody2D.gd::GDScript::-1::1702324533::0::1::::<>AnimatableBody2D<>::
-Gold.gd::GDScript::-1::1702365777::0::1::::<>Node2D<>::
+Gold.gd::GDScript::-1::1702405338::0::1::::<>Node2D<>::
 gold.tscn::PackedScene::8596617428887677347::1702392683::0::1::::<><>::res://objects/Gold.gd<>uid://cvvqsub03j26b::::res://Sprites/монетка.png
 platform.gd::GDScript::-1::1702302867::0::1::::<>Node2D<>::
 platform.tscn::PackedScene::5687234552197278492::1702392683::0::1::::<><>::res://objects/platform.gd<>uid://kh4mew06v6cf::::res://Sprites/платформа (2).png
@@ -31,17 +24,20 @@ pterodactyl.tscn::PackedScene::2573496579543011609::1702324533::0::1::::<><>::re
 rigid_body_2d.gd::GDScript::-1::1702385112::0::1::::<>RigidBody2D<>::
 rigid_body_2d.tscn::PackedScene::2487734205699188084::1702390154::0::1::::<><>::res://objects/rigid_body_2d.gd<>uid://mdr6ek4848cs::::res://Sprites/шишуля.png
 umbrella.gd::GDScript::-1::1702385607::0::1::::<>Node2D<>::
-umbrella.tscn::PackedScene::2011980260609318903::1702398498::0::1::::<><>::res://objects/umbrella.gd<>uid://doa72x4t7cve0::::res://Sprites/зонтик.png
-::res://PLAYER/::1702392778
+umbrella.tscn::PackedScene::2011980260609318903::1702409002::0::1::::<><>::res://objects/umbrella.gd<>uid://doa72x4t7cve0::::res://Sprites/зонтик.png
+::res://PLAYER/::1702401447
 CameraPlayer.gd::GDScript::-1::1702241946::0::1::::<>Camera2D<>::
 person.tscn::PackedScene::6303651942340591632::1702392778::0::1::::<><>::res://PLAYER/PLAYER.gd<>uid://bcfmg2374djo4::::res://Sprites/Спрайт-0003-Sheet.png<>res://PLAYER/CameraPlayer.gd<>uid://be6c2phpwj0m0::::res://Sprites/динозаврспайдермен.png<>uid://m31qbdex58kp::::res://Sprites/динозаврлуффи.png<>uid://ckkl05vnrvcgk::::res://Sprites/pwq-0003-Sheet.png
-PLAYER.gd::GDScript::-1::1702391905::0::1::::<>CharacterBody2D<>::
-::res://Signals/::1702392207
+PLAYER.gd::GDScript::-1::1702401447::0::1::::<>CharacterBody2D<>::
+::res://Signals/::1702406434
 node.tscn::PackedScene::948047596960568742::1702241946::0::1::::<><>::res://Signals/Signals.gd
-Signals.gd::GDScript::-1::1702392207::0::1::::<>Node<>::
-::res://Sounds/::1702392183
+Signals.gd::GDScript::-1::1702406434::0::1::::<>Node<>::
+::res://Sounds/::1702405776
+Звук покупки.mp3::AudioStreamMP3::3519085294899538775::1702405589::1702405702::1::::<><>::
 Игра.mp3::AudioStreamMP3::1054916043027439301::1702388919::1702391004::1::::<><>::
+кря.mp3::AudioStreamMP3::4437307291422615322::1702405633::1702405702::1::::<><>::
 Меню.mp3::AudioStreamMP3::8459404232952764279::1702388853::1702389696::1::::<><>::
+Нажатие на кнопку.mp3::AudioStreamMP3::3968511248456416205::1702405609::1702405776::1::::<><>::
 Прыжок.mp3::AudioStreamMP3::1182716494014811290::1702388910::1702389585::1::::<><>::
 ::res://Sprites/::1702398844
 34e-0002.png::CompressedTexture2D::7350199192358058929::1702392733::1702392738::1::::<><>::

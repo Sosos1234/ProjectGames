@@ -16,7 +16,7 @@ var iconIsWeared = preload("res://Sprites/235.png")
 var iconIsWearing = preload("res://Sprites/234005.png")
 
 func _ready():
-	Global.playerMoney = 4000
+	Global.playerMoney = 5000
 	if Global.globalSkin != "spiderSkin" && Global.buttonz2 == true:
 		button4.icon = iconIsWearing
 		money1.queue_free()
@@ -64,6 +64,7 @@ func _process(delta):
 func _on_button_pressed():
 	if Global.playerMoney >= 250:
 		Global.playerMoney -= 250
+		$"../Buy".playing = true
 		button.queue_free()
 		money1.queue_free()
 		Global.buttonz1 = true
@@ -72,6 +73,7 @@ func _on_button_pressed():
 func _on_button_2_pressed():
 	if Global.playerMoney >= 500:
 		Global.playerMoney -= 500
+		$"../Buy".playing = true
 		button2.queue_free()
 		money2.queue_free()
 		Global.buttonz2 = true
@@ -80,19 +82,24 @@ func _on_button_2_pressed():
 func _on_button_3_pressed():
 	if Global.playerMoney >= 1000:
 		Global.playerMoney -= 1000
+		$"../Buy".playing = true
 		button3.queue_free()
 		money3.queue_free()
 		Global.buttonz3 = true
 		button6.icon = iconIsWearing
 
 func _on_button_4_pressed():
+	$"../TapOnButton".playing = true
 	Global.globalSkin = "cjSkin"
 
 func _on_button_5_pressed():
+	$"../TapOnButton".playing = true
 	Global.globalSkin = "spiderSkin"
 
 func _on_button_6_pressed():
+	$"../TapOnButton".playing = true
 	Global.globalSkin = "luffiSkin"
 
 func _on_button_8_pressed():
+	$"../TapOnButton".playing = true
 	Global.globalSkin = "standartSkin"
