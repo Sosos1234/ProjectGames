@@ -69,7 +69,6 @@ func _on_button_pressed():
 		money1.queue_free()
 		Global.buttonz1 = true
 		button4.icon = iconIsWearing
-		save_game()
 
 func _on_button_2_pressed():
 	if Global.playerMoney >= 500:
@@ -79,7 +78,6 @@ func _on_button_2_pressed():
 		money2.queue_free()
 		Global.buttonz2 = true
 		button5.icon = iconIsWearing
-		save_game()
 
 func _on_button_3_pressed():
 	if Global.playerMoney >= 1000:
@@ -89,31 +87,24 @@ func _on_button_3_pressed():
 		money3.queue_free()
 		Global.buttonz3 = true
 		button6.icon = iconIsWearing
-		save_game()
 
 func _on_button_4_pressed():
 	$"../TapOnButton".playing = true
 	Global.globalSkin = 2
-	save_game()
 
 func _on_button_5_pressed():
 	$"../TapOnButton".playing = true
 	Global.globalSkin = 0
-	save_game()
 
 func _on_button_6_pressed():
 	$"../TapOnButton".playing = true
 	Global.globalSkin = 1
-	save_game()
 
 func _on_button_8_pressed():
 	$"../TapOnButton".playing = true
 	Global.globalSkin = 3
-	save_game()
-func save_game ():
+func save_game():
 	var file = FileAccess.open(Global.save_path, FileAccess.WRITE)
-	file.store_var(Global.playerMoney)
-	file.store_var(Global.globalSkin)
 	file.store_var(Global.buttonz1)
 	file.store_var(Global.buttonz2)
 	file.store_var(Global.buttonz3)

@@ -18,6 +18,12 @@
 script/source = "extends Node2D
 
 func _on_exit_pressed():
+	var file = FileAccess.open(Global.save_path, FileAccess.WRITE)
+	file.store_var(Global.playerMoney)
+	file.store_var(Global.globalSkin)
+	file.store_var(Global.buttonz1)
+	file.store_var(Global.buttonz2)
+	file.store_var(Global.buttonz3)
 	get_tree().change_scene_to_file(\"res://Levels/menu.tscn\")
 "
 

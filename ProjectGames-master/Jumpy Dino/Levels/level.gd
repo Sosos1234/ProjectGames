@@ -1,5 +1,4 @@
 extends Node2D
-
 var HaveBeenPterodactyl = false
 var have: bool = false
 var YPos = 150
@@ -23,8 +22,11 @@ var pterodactyl_scene = preload("res://objects/pterodactyl.tscn")
 var shishulya_scene = preload("res://objects/rigid_body_2d.tscn")
 var coin_scene = preload("res://objects/gold.tscn")
 var umbrella_scene = preload("res://objects/umbrella.tscn")
-
+func save_game():
+	var file = FileAccess.open(Global.save_path, FileAccess.WRITE)
+	file.store_var(Global.playerMoney)
 func _ready():
+	Global.lives = 3
 	Signals.emit_signal("GameStarted")
 	generate_level(posMaxYForGeneration, posMinYForGeneration)
 
@@ -89,6 +91,7 @@ func generate_level(posMaxYForGeneration, posMinYForGeneration):
 		Signals.emit_signal("SpeedShishuly", current_level)
 		
 func _process(_delta):
+	print (Global.lives)
 	var cam = get_node("Player/Camera2D")
 	%WallOfDeath.position.y = cam.limit_bottom + 100
 	if $Player.position.y < (maxPosPlatform+300):
@@ -98,8 +101,8 @@ func _process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		Signals.emit_signal("PlayerInArea")
-		print (Global.lives)
+		Signals.emit_signal ("PlayerInArea")
+		save_game()
 
 func _on_area_2d_2_body_entered(body):
 	if body.name == "Player":

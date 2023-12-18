@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://bcwwufnt88nr5"]
 
-[ext_resource type="Script" path="res://Levels/manager.gd" id="1_00s8c"]
+[ext_resource type="Script" path="res://Levels/manager.gd" id="1_frj62"]
 [ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="1_mnmfu"]
 [ext_resource type="Texture2D" uid="uid://dw0ch2vukjo44" path="res://Sprites/vfufpby.png" id="1_stacs"]
 [ext_resource type="PackedScene" uid="uid://cgu6mxp2emtp0" path="res://Levels/bg.tscn" id="2_4qkqx"]
@@ -58,10 +58,8 @@ func _ready():
 	scale.y = 1
 	
 func _on_pressed():
-	Global.lives = 3
 	Signals.emit_signal(\"PlayButtonSound\")
 	get_tree().change_scene_to_file(\"res://Levels/level.tscn\")
-
 
 func _on_mouse_entered():
 	scale.x = 1.05
@@ -96,6 +94,15 @@ script/source = "extends CharacterBody2D
 @onready var anim3 = $AnimatedSprite2D3
 @onready var anim4 = $AnimatedSprite2D4
 
+func _ready():
+	load_game()
+func load_game():
+	var file = FileAccess.open(Global.save_path, FileAccess.READ)
+	Global.playerMoney = file.get_var(Global.playerMoney)
+	Global.globalSkin = file.get_var(Global.globalSkin)
+	Global.buttonz1 = file.get_var(Global.buttonz1)
+	Global.buttonz2 = file.get_var(Global.buttonz2)
+	Global.buttonz3 = file.get_var(Global.buttonz3)
 func _physics_process(delta):
 	if Global.globalSkin == 0:
 		anim.hide()
@@ -242,7 +249,7 @@ animations = [{
 [node name="Menu" type="Node2D"]
 
 [node name="manager" type="Node2D" parent="."]
-script = ExtResource("1_00s8c")
+script = ExtResource("1_frj62")
 
 [node name="Platform" parent="." instance=ExtResource("1_mnmfu")]
 position = Vector2(16, 950)
