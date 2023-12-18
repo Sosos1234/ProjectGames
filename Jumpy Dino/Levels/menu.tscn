@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://be6c2phpwj0m0" path="res://Sprites/динозаврспайдермен.png" id="4_mcv12"]
 [ext_resource type="Texture2D" uid="uid://m31qbdex58kp" path="res://Sprites/динозаврлуффи.png" id="5_dyjdq"]
 [ext_resource type="Texture2D" uid="uid://ckkl05vnrvcgk" path="res://Sprites/pwq-0003-Sheet.png" id="6_bhuph"]
-[ext_resource type="AudioStream" uid="uid://dsr2ffpwfom1t" path="res://Sounds/Меню.mp3" id="10_865m8"]
+[ext_resource type="AudioStream" uid="uid://pbakv7hqif14" path="res://Sounds/Игра.mp3" id="6_et2sv"]
 
 [sub_resource type="GDScript" id="GDScript_0hdxw"]
 script/source = "extends Button
@@ -71,6 +71,18 @@ func _on_mouse_exited():
 	scale.x = 1
 	scale.y = 1
 	
+"
+
+[sub_resource type="GDScript" id="GDScript_sty7m"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	play(Global.menuMusic + 0.017)
+
+func _on_shop_pressed():
+	Global.menuMusic = get_playback_position()
 "
 
 [sub_resource type="GDScript" id="GDScript_byar3"]
@@ -224,18 +236,6 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_sty7m"]
-script/source = "extends AudioStreamPlayer
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	play(Global.menuMusic + 0.017)
-
-func _on_shop_pressed():
-	Global.menuMusic = get_playback_position()
-"
-
 [node name="Menu" type="Node2D"]
 
 [node name="Platform" parent="." instance=ExtResource("1_mnmfu")]
@@ -300,6 +300,11 @@ script = SubResource("GDScript_6eahc")
 [node name="BG" parent="." instance=ExtResource("2_4qkqx")]
 scroll_offset = Vector2(245, -340)
 
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_et2sv")
+volume_db = -20.0
+script = SubResource("GDScript_sty7m")
+
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(268, 891)
 collision_layer = 3
@@ -337,18 +342,13 @@ scale = Vector2(0.09, 0.11)
 sprite_frames = SubResource("SpriteFrames_u8b06")
 animation = &"IDLE"
 
-[node name="MenuMusic" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource("10_865m8")
-volume_db = -20.0
-script = SubResource("GDScript_sty7m")
-
 [connection signal="mouse_entered" from="Button" to="Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="mouse_entered" from="Shop" to="Shop" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Shop" to="Shop" method="_on_mouse_exited"]
 [connection signal="pressed" from="Shop" to="Shop" method="_on_pressed"]
-[connection signal="pressed" from="Shop" to="Player/MenuMusic" method="_on_shop_pressed"]
+[connection signal="pressed" from="Shop" to="MenuMusic" method="_on_shop_pressed"]
 [connection signal="mouse_entered" from="Play" to="Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Play" to="Play" method="_on_mouse_exited"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://m31qbdex58kp" path="res://Sprites/динозаврлуффи.png" id="6_762px"]
 [ext_resource type="Texture2D" uid="uid://dpcjit24aa2da" path="res://Sprites/укп-0004.png" id="6_uj8ip"]
 [ext_resource type="Texture2D" uid="uid://ckkl05vnrvcgk" path="res://Sprites/pwq-0003-Sheet.png" id="7_d5eiu"]
-[ext_resource type="AudioStream" uid="uid://dsr2ffpwfom1t" path="res://Sounds/Меню.mp3" id="10_gd5o8"]
+[ext_resource type="AudioStream" uid="uid://pbakv7hqif14" path="res://Sounds/Игра.mp3" id="11_l41ht"]
 [ext_resource type="AudioStream" uid="uid://bwsm2hldjgypp" path="res://Sounds/Нажатие на кнопку.mp3" id="12_ijpuw"]
 [ext_resource type="AudioStream" uid="uid://bqew25xko8rql" path="res://Sounds/Звук покупки.mp3" id="13_kq648"]
 
@@ -590,7 +590,7 @@ scale = Vector2(0.142, 0.142)
 sprite_frames = SubResource("SpriteFrames_c231t")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_gd5o8")
+stream = ExtResource("11_l41ht")
 volume_db = -20.0
 script = SubResource("GDScript_7ty3a")
 
@@ -611,19 +611,16 @@ stream = ExtResource("13_kq648")
 [connection signal="mouse_entered" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button" to="TapOnButton" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Button5" to="CanvasLayer/Button5" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Button5" to="CanvasLayer/Button5" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Button5" to="CanvasLayer" method="_on_button_5_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Button2" to="CanvasLayer/Button2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Button2" to="CanvasLayer/Button2" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="CanvasLayer" method="_on_button_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button2" to="TapOnButton" method="_on_button_2_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Button6" to="CanvasLayer/Button6" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Button6" to="CanvasLayer/Button6" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Button6" to="CanvasLayer" method="_on_button_6_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Button3" to="CanvasLayer/Button3" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Button3" to="CanvasLayer/Button3" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Button3" to="CanvasLayer" method="_on_button_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button3" to="TapOnButton" method="_on_button_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button8" to="CanvasLayer" method="_on_button_8_pressed"]

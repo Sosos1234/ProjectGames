@@ -16,27 +16,26 @@ var iconIsWeared = preload("res://Sprites/235.png")
 var iconIsWearing = preload("res://Sprites/234005.png")
 
 func _ready():
-	Global.playerMoney = 5000
 	if Global.globalSkin != "spiderSkin" && Global.buttonz2 == true:
 		button4.icon = iconIsWearing
-		money1.queue_free()
+		money2.queue_free()
 	if Global.globalSkin != "luffiSkin" && Global.buttonz3 == true:
 		button6.icon = iconIsWearing
-		money2.queue_free()
-	if Global.globalSkin != "cjSkin" && Global.buttonz1 == true:
-		button5.icon = iconIsWearing
 		money3.queue_free()
+	if Global.globalSkin != "cjSkin" && Global.buttonz1 == true:
+		button4.icon = iconIsWearing
+		money1.queue_free()
 	if Global.globalSkin != "standartSkin":
 		button8.icon = iconIsWearing
 	if Global.globalSkin == "spiderSkin" && Global.buttonz2 == true:
 		button5.icon = iconIsWeared
-		money1.queue_free()
+		money2.queue_free()
 	if Global.globalSkin == "luffiSkin" && Global.buttonz3 == true:
 		button6.icon = iconIsWeared
-		money2.queue_free()
+		money3.queue_free()
 	if Global.globalSkin == "cjSkin" && Global.buttonz1 == true:
 		button4.icon = iconIsWeared
-		money3.queue_free()
+		money1.queue_free()
 	if Global.globalSkin == "standartSkin":
 		button8.icon = iconIsWeared
 
