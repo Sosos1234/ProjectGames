@@ -1,0 +1,348 @@
+[gd_scene load_steps=33 format=3 uid="uid://bcwwufnt88nr5"]
+
+[ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="1_mnmfu"]
+[ext_resource type="Texture2D" uid="uid://dw0ch2vukjo44" path="res://Sprites/vfufpby.png" id="1_stacs"]
+[ext_resource type="PackedScene" uid="uid://cgu6mxp2emtp0" path="res://Levels/bg.tscn" id="2_4qkqx"]
+[ext_resource type="Texture2D" uid="uid://bqkuy1y5xdade" path="res://Sprites/vf433y.png" id="2_oovk7"]
+[ext_resource type="Texture2D" uid="uid://c5i045fqqto2x" path="res://Sprites/play.png" id="2_pdydg"]
+[ext_resource type="Texture2D" uid="uid://bcfmg2374djo4" path="res://Sprites/Спрайт-0003-Sheet.png" id="3_0x4kh"]
+[ext_resource type="Texture2D" uid="uid://be6c2phpwj0m0" path="res://Sprites/динозаврспайдермен.png" id="4_mcv12"]
+[ext_resource type="Texture2D" uid="uid://m31qbdex58kp" path="res://Sprites/динозаврлуффи.png" id="5_dyjdq"]
+[ext_resource type="Texture2D" uid="uid://ckkl05vnrvcgk" path="res://Sprites/pwq-0003-Sheet.png" id="6_bhuph"]
+[ext_resource type="AudioStream" uid="uid://dsr2ffpwfom1t" path="res://Sounds/Меню.mp3" id="10_865m8"]
+
+[sub_resource type="GDScript" id="GDScript_0hdxw"]
+script/source = "extends Button
+
+
+func _on_pressed():
+	get_tree().quit()
+
+func _on_mouse_entered():
+	scale.x = 1.05
+	scale.y = 1.05
+	position = Vector2i(self.position.x-5, self.position.y-3)
+
+func _on_mouse_exited():
+	position = Vector2i(self.position.x+5, self.position.y+3)
+	scale.x = 1
+	scale.y = 1
+"
+
+[sub_resource type="GDScript" id="GDScript_5yx8g"]
+resource_name = "shop"
+script/source = "extends Button
+
+func _on_pressed():
+	get_tree().change_scene_to_file(\"res://Levels/shop.tscn\")
+
+func _on_mouse_entered():
+	scale.x = 1.05
+	scale.y = 1.05
+	position = Vector2i(self.position.x-5, self.position.y-3)
+
+func _on_mouse_exited():
+	position = Vector2i(self.position.x+5, self.position.y+3)
+	scale.x = 1
+	scale.y = 1
+"
+
+[sub_resource type="GDScript" id="GDScript_6eahc"]
+resource_name = "Play"
+script/source = "extends Button
+
+func _ready():
+	scale.x = 1
+	scale.y = 1
+	
+func _on_pressed():
+	get_tree().change_scene_to_file(\"res://Levels/level.tscn\")
+
+func _on_mouse_entered():
+	scale.x = 1.05
+	scale.y = 1.05
+	position = Vector2i(self.position.x-5, self.position.y-3)
+
+
+func _on_mouse_exited():
+	position = Vector2i(self.position.x+5, self.position.y+3)
+	scale.x = 1
+	scale.y = 1
+	
+"
+
+[sub_resource type="GDScript" id="GDScript_byar3"]
+script/source = "extends CharacterBody2D
+
+@onready var anim = $AnimatedSprite2D
+@onready var anim2 = $AnimatedSprite2D2
+@onready var anim3 = $AnimatedSprite2D3
+@onready var anim4 = $AnimatedSprite2D4
+
+func _physics_process(delta):
+	if Global.globalSkin == \"spiderSkin\":
+		anim.hide()
+		anim2.show()
+		anim3.hide()
+		anim4.hide()
+	if Global.globalSkin == \"luffiSkin\":
+		anim.hide()
+		anim2.hide()
+		anim3.show()
+		anim4.hide()
+	if Global.globalSkin == \"cjSkin\":
+		anim.hide()
+		anim2.hide()
+		anim3.hide()
+		anim4.show()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aeq0d"]
+radius = 18.0
+height = 94.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27tct"]
+atlas = ExtResource("3_0x4kh")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3vyj"]
+atlas = ExtResource("3_0x4kh")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waeox"]
+atlas = ExtResource("3_0x4kh")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6c87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27tct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3vyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waeox")
+}],
+"loop": false,
+"name": &"IDLE",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dodb"]
+atlas = ExtResource("4_mcv12")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7cxq"]
+atlas = ExtResource("4_mcv12")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84mq7"]
+atlas = ExtResource("4_mcv12")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_252cp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dodb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7cxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84mq7")
+}],
+"loop": false,
+"name": &"IDLE",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usfuy"]
+atlas = ExtResource("5_dyjdq")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0u0v"]
+atlas = ExtResource("5_dyjdq")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5wxe"]
+atlas = ExtResource("5_dyjdq")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mn7mr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usfuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0u0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5wxe")
+}],
+"loop": false,
+"name": &"IDLE",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jro28"]
+atlas = ExtResource("6_bhuph")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b38rm"]
+atlas = ExtResource("6_bhuph")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0bw7"]
+atlas = ExtResource("6_bhuph")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8b06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jro28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b38rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0bw7")
+}],
+"loop": false,
+"name": &"IDLE",
+"speed": 9.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_sty7m"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	playing = true
+
+func _on_shop_pressed():
+	Global.menuMusic = get_playback_position()
+	print(Global.menuMusic)
+"
+
+[node name="Menu" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_mnmfu")]
+position = Vector2(16, 950)
+
+[node name="Platform2" parent="." instance=ExtResource("1_mnmfu")]
+position = Vector2(98, 950)
+
+[node name="Platform3" parent="." instance=ExtResource("1_mnmfu")]
+position = Vector2(180, 950)
+
+[node name="Platform4" parent="." instance=ExtResource("1_mnmfu")]
+position = Vector2(262, 950)
+
+[node name="Platform5" parent="." instance=ExtResource("1_mnmfu")]
+position = Vector2(344, 950)
+
+[node name="Platform7" parent="." instance=ExtResource("1_mnmfu")]
+position = Vector2(508, 950)
+
+[node name="Platform6" parent="." instance=ExtResource("1_mnmfu")]
+position = Vector2(426, 950)
+
+[node name="Platform8" parent="." instance=ExtResource("1_mnmfu")]
+position = Vector2(264, 768)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 151.0
+offset_top = 600.0
+offset_right = 359.0
+offset_bottom = 688.0
+icon = ExtResource("2_oovk7")
+flat = true
+script = SubResource("GDScript_0hdxw")
+
+[node name="Shop" type="Button" parent="."]
+offset_left = 158.0
+offset_top = 507.0
+offset_right = 366.0
+offset_bottom = 595.0
+icon = ExtResource("1_stacs")
+flat = true
+script = SubResource("GDScript_5yx8g")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 136.0
+offset_top = 379.0
+offset_right = 404.0
+offset_bottom = 525.0
+scale = Vector2(0.88, 0.720005)
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "
+
+"
+icon = ExtResource("2_pdydg")
+flat = true
+text_direction = 1
+script = SubResource("GDScript_6eahc")
+
+[node name="BG" parent="." instance=ExtResource("2_4qkqx")]
+scroll_offset = Vector2(245, -340)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(268, 891)
+collision_layer = 3
+collision_mask = 3
+script = SubResource("GDScript_byar3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_aeq0d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(-6, -4)
+scale = Vector2(0.09, 0.11)
+sprite_frames = SubResource("SpriteFrames_q6c87")
+animation = &"IDLE"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Player"]
+visible = false
+position = Vector2(-6, -4)
+scale = Vector2(0.09, 0.11)
+sprite_frames = SubResource("SpriteFrames_252cp")
+animation = &"IDLE"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Player"]
+visible = false
+position = Vector2(-6, -4)
+scale = Vector2(0.09, 0.11)
+sprite_frames = SubResource("SpriteFrames_mn7mr")
+animation = &"IDLE"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Player"]
+visible = false
+position = Vector2(-6, -4)
+scale = Vector2(0.09, 0.11)
+sprite_frames = SubResource("SpriteFrames_u8b06")
+animation = &"IDLE"
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_865m8")
+volume_db = -20.0
+script = SubResource("GDScript_sty7m")
+
+[connection signal="mouse_entered" from="Button" to="Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Shop" to="Shop" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Shop" to="Shop" method="_on_mouse_exited"]
+[connection signal="pressed" from="Shop" to="Shop" method="_on_pressed"]
+[connection signal="pressed" from="Shop" to="MenuMusic" method="_on_shop_pressed"]
+[connection signal="mouse_entered" from="Play" to="Play" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Play" to="Play" method="_on_mouse_exited"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]

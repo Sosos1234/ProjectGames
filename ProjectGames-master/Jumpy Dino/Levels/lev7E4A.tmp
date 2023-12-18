@@ -1,0 +1,130 @@
+[gd_scene load_steps=12 format=3 uid="uid://bosjsdsmm6rcc"]
+
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_55joy"]
+[ext_resource type="PackedScene" uid="uid://cv2shx37rs0h5" path="res://PLAYER/person.tscn" id="2_ql3l8"]
+[ext_resource type="PackedScene" uid="uid://cgu6mxp2emtp0" path="res://Levels/bg.tscn" id="4_dmsj0"]
+[ext_resource type="Script" path="res://Levels/Area2D2.gd" id="5_0f6w1"]
+[ext_resource type="PackedScene" uid="uid://cna66masx2f85" path="res://objects/platform.tscn" id="5_qyija"]
+[ext_resource type="PackedScene" uid="uid://bbpcvbppq75vs" path="res://objects/rigid_body_2d.tscn" id="6_lghpg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndvjs"]
+size = Vector2(608, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6eng"]
+size = Vector2(13.75, 961.625)
+
+[sub_resource type="GDScript" id="GDScript_t51w7"]
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"Очки: \" + str($\"../../Player\".MaxScore)
+
+"
+
+[sub_resource type="GDScript" id="GDScript_03uwr"]
+resource_name = "Mon"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"Деньги: \" + str($\"../../Player\".money)
+
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1p05"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_55joy")
+
+[node name="Player" parent="." instance=ExtResource("2_ql3l8")]
+position = Vector2(262, 893)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="WallOfDeath" type="CollisionShape2D" parent="Area2D"]
+unique_name_in_owner = true
+position = Vector2(266, 974)
+shape = SubResource("RectangleShape2D_ndvjs")
+
+[node name="BG" parent="." instance=ExtResource("4_dmsj0")]
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(190, 494)
+script = ExtResource("5_0f6w1")
+
+[node name="Area2D" type="Area2D" parent="Area2D2"]
+position = Vector2(-169, 86)
+
+[node name="transitionWall2" type="CollisionShape2D" parent="Area2D2/Area2D"]
+unique_name_in_owner = true
+position = Vector2(543, -98)
+shape = SubResource("RectangleShape2D_r6eng")
+
+[node name="Area2D2" type="Area2D" parent="Area2D2"]
+position = Vector2(-169, 86)
+
+[node name="transitionWall1" type="CollisionShape2D" parent="Area2D2/Area2D2"]
+unique_name_in_owner = true
+position = Vector2(-53, -98)
+shape = SubResource("RectangleShape2D_r6eng")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+offset_right = 107.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 50
+text = "
+"
+script = SubResource("GDScript_t51w7")
+
+[node name="Money" type="Label" parent="CanvasLayer"]
+offset_top = 80.0
+offset_right = 107.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 50
+text = "
+"
+script = SubResource("GDScript_03uwr")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(270, 1)
+scale = Vector2(-270.005, 959.001)
+texture_normal = SubResource("AtlasTexture_q1p05")
+action = "left"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(540, 1)
+scale = Vector2(-270.005, 959.001)
+texture_normal = SubResource("AtlasTexture_q1p05")
+action = "right"
+
+[node name="Platform8" parent="." instance=ExtResource("5_qyija")]
+position = Vector2(264, 768)
+
+[node name="Platform" parent="." instance=ExtResource("5_qyija")]
+position = Vector2(16, 950)
+
+[node name="Platform2" parent="." instance=ExtResource("5_qyija")]
+position = Vector2(98, 950)
+
+[node name="Platform3" parent="." instance=ExtResource("5_qyija")]
+position = Vector2(180, 950)
+
+[node name="Platform4" parent="." instance=ExtResource("5_qyija")]
+position = Vector2(262, 950)
+
+[node name="Platform5" parent="." instance=ExtResource("5_qyija")]
+position = Vector2(344, 950)
+
+[node name="Platform7" parent="." instance=ExtResource("5_qyija")]
+position = Vector2(508, 950)
+
+[node name="Platform6" parent="." instance=ExtResource("5_qyija")]
+position = Vector2(426, 950)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("6_lghpg")]
+position = Vector2(273, 96)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2/Area2D" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D2/Area2D2" to="." method="_on_area_2d_3_body_entered"]

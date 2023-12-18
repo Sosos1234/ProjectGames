@@ -1,0 +1,11 @@
+res://Levels/manager.gd
+res://Levels/menu.tscn
+res://Levels/level.tscn
+res://objects/umbrella.tscn
+res://Levels/shop.tscn
+res://global.gd
+res://PLAYER/PLAYER.gd
+res://Levels/level.gd
+res://objects/pterodactyl.tscn
+res://Signals/Signals.gd
+res://Levels/CanvasLayer.gd

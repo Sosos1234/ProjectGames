@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbpcvbppq75vs"]
+
+[ext_resource type="Script" path="res://objects/rigid_body_2d.gd" id="1_ue4yl"]
+[ext_resource type="Texture2D" uid="uid://mdr6ek4848cs" path="res://Sprites/шишуля.png" id="2_hscj6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhbbq"]
+radius = 19.105
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gremu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hscj6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_ue4yl")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_hhbbq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D2/CollisionShape2D"]
+scale = Vector2(0.14375, 0.14375)
+sprite_frames = SubResource("SpriteFrames_gremu")
+frame_progress = 0.497243
+
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
