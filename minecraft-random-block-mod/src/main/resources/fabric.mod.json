@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "randomblockreplace",
+	"version": "${version}",
+	"name": "Random Block Replace",
+	"description": "Каждый сломанный игроком блок заменяется случайным блоком.",
+	"authors": [
+		"Sosos1234"
+	],
+	"contact": {
+		"sources": "https://github.com/Sosos1234/ProjectGames"
+	},
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.example.RandomBlockReplaceMod"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.18.2",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
