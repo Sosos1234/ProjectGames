@@ -27,7 +27,7 @@ public class RandomBlockReplaceMod implements ModInitializer {
 		LOGGER.info("Loaded {} replacement states.", REPLACEMENT_STATES.size());
 
 		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
-			if (world.isClientSide) {
+			if (world.isClientSide()) {
 				return;
 			}
 
@@ -40,7 +40,7 @@ public class RandomBlockReplaceMod implements ModInitializer {
 		REPLACEMENT_STATES.clear();
 
 		for (Block block : BuiltInRegistries.BLOCK) {
-			BlockState state = block.getDefaultState();
+			BlockState state = block.defaultBlockState();
 			if (state.isAir()) {
 				continue;
 			}
@@ -52,7 +52,7 @@ public class RandomBlockReplaceMod implements ModInitializer {
 
 		if (REPLACEMENT_STATES.isEmpty()) {
 			LOGGER.warn("No valid replacement blocks found, using stone fallback only.");
-			REPLACEMENT_STATES.add(Blocks.STONE.getDefaultState());
+			REPLACEMENT_STATES.add(Blocks.STONE.defaultBlockState());
 		}
 	}
 
@@ -64,6 +64,6 @@ public class RandomBlockReplaceMod implements ModInitializer {
 			}
 		}
 
-		return Blocks.STONE.getDefaultState();
+		return Blocks.STONE.defaultBlockState();
 	}
 }
