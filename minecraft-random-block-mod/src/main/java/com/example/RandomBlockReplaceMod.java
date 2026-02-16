@@ -2,12 +2,12 @@ package com.example;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,19 +27,19 @@ public class RandomBlockReplaceMod implements ModInitializer {
 		LOGGER.info("Loaded {} replacement states.", REPLACEMENT_STATES.size());
 
 		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
-			if (world.isClient()) {
+			if (world.isClientSide) {
 				return;
 			}
 
 			BlockState replacement = chooseReplacementState(world, pos);
-			world.setBlockState(pos, replacement, Block.NOTIFY_ALL);
+			world.setBlock(pos, replacement, Block.UPDATE_ALL);
 		});
 	}
 
 	private static void populateReplacementPool() {
 		REPLACEMENT_STATES.clear();
 
-		for (Block block : Registries.BLOCK) {
+		for (Block block : BuiltInRegistries.BLOCK) {
 			BlockState state = block.getDefaultState();
 			if (state.isAir()) {
 				continue;
@@ -56,10 +56,10 @@ public class RandomBlockReplaceMod implements ModInitializer {
 		}
 	}
 
-	private static BlockState chooseReplacementState(World world, BlockPos pos) {
+	private static BlockState chooseReplacementState(Level world, BlockPos pos) {
 		for (int attempt = 0; attempt < MAX_PICK_ATTEMPTS; attempt++) {
 			BlockState candidate = REPLACEMENT_STATES.get(world.getRandom().nextInt(REPLACEMENT_STATES.size()));
-			if (candidate.canPlaceAt(world, pos)) {
+			if (candidate.canSurvive(world, pos)) {
 				return candidate;
 			}
 		}
